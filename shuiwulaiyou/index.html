@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水无濑优夏 作品 - 作品索引与角色档案</title>
+<meta name="description" content="水无濑优夏 作品索引：收录2026年10月至11月更新的角色档案、共演作品、广播剧与评论，适合关注声优作品与角色解析的读者查阅。">
+<meta name="keywords" content="水无濑优夏 作品">
+<style>
+  :root{
+    --c-primary:#2f6f8f;
+    --c-primary-light:#e3f0f5;
+    --c-primary-dark:#1e4f68;
+    --c-accent:#c07a4b;
+    --c-bg:#f7f5f0;
+    --c-surface:#ffffff;
+    --c-text:#1f2a2e;
+    --c-text-2:#4f5f66;
+    --c-text-3:#7f8f96;
+    --c-line:#dde4e8;
+    --radius-card:14px;
+    --radius-btn:8px;
+    --radius-tag:20px;
+    --radius-banner:10px;
+    --shadow-default:0 2px 8px rgba(30,50,60,.07);
+    --shadow-hover:0 6px 20px rgba(30,50,60,.13);
+    --font: "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    --max-w:1320px;
+    --sticky-h:96px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 12px)}
+  body{
+    font-family:var(--font);
+    background:var(--c-bg);
+    color:var(--c-text);
+    line-height:1.7;
+    font-size:15px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--c-primary-dark);text-decoration:none}
+  a:hover{color:var(--c-accent)}
+  img{display:block;max-width:100%}
+  ul,ol{list-style:none}
+  button{font-family:inherit;cursor:pointer}
+
+  /* ===== 吸顶区 ===== */
+  .sticky-wrap{
+    position:sticky;top:0;z-index:100;
+    backdrop-filter:blur(8px);
+    background:rgba(247,245,240,.94);
+  }
+  .notice-bar{
+    background:var(--c-primary-dark);
+    color:#e8f2f6;
+    font-size:13px;
+    padding:7px 0;
+  }
+  .notice-inner{
+    max-width:var(--max-w);margin:0 auto;padding:0 20px;
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;
+  }
+  .notice-brand{
+    font-weight:700;color:#fff;letter-spacing:.5px;flex-shrink:0;
+  }
+  .notice-item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .notice-item time{
+    background:rgba(255,255,255,.16);padding:1px 8px;border-radius:20px;
+    font-size:12px;letter-spacing:.3px;
+  }
+  .notice-item .dot{color:var(--c-accent);font-weight:700}
+
+  .site-header{
+    background:rgba(255,255,255,.92);
+    border-bottom:1px solid var(--c-line);
+  }
+  .header-inner{
+    max-width:var(--max-w);margin:0 auto;padding:0 20px;
+    display:flex;align-items:center;gap:24px;height:66px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .brand-mark{width:38px;height:38px;flex-shrink:0}
+  .brand-text{font-size:18px;font-weight:800;color:var(--c-primary-dark);letter-spacing:.4px}
+  .main-nav{display:flex;flex-wrap:wrap;gap:2px 4px;flex:1}
+  .main-nav a{
+    padding:6px 11px;border-radius:var(--radius-btn);
+    color:var(--c-text-2);font-size:14px;font-weight:500;
+    transition:background .18s,color .18s;
+  }
+  .main-nav a:hover,.main-nav a:focus-visible{background:var(--c-primary-light);color:var(--c-primary-dark);outline:none}
+  .search-box{position:relative;flex-shrink:0}
+  .search-box input{
+    width:180px;padding:7px 12px;border:1px solid var(--c-line);border-radius:var(--radius-tag);
+    font-size:13px;background:#fdfdfc;color:var(--c-text);outline:none;
+    transition:border-color .18s,box-shadow .18s;
+  }
+  .search-box input:focus{border-color:var(--c-primary);box-shadow:0 0 0 3px rgba(47,111,143,.15)}
+  .search-empty{
+    display:none;position:absolute;top:calc(100% + 6px);right:0;
+    background:var(--c-surface);border:1px solid var(--c-line);border-radius:8px;
+    padding:10px 14px;font-size:13px;color:var(--c-text-3);white-space:nowrap;
+    box-shadow:var(--shadow-default);z-index:20;
+  }
+  .search-empty.show{display:block}
+  .menu-toggle{display:none;background:none;border:none;padding:6px;border-radius:6px;color:var(--c-primary-dark);font-size:22px;line-height:1}
+
+  /* ===== 首屏 ===== */
+  .hero{
+    max-width:var(--max-w);margin:0 auto;padding:48px 20px 40px;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(30px,4vw,46px);
+    line-height:1.2;
+    letter-spacing:-.5px;
+    color:var(--c-primary-dark);
+    margin-bottom:16px;
+  }
+  .hero-desc{
+    font-size:16px;color:var(--c-text-2);max-width:560px;margin-bottom:22px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 22px;border-radius:var(--radius-btn);
+    font-size:14px;font-weight:600;border:1px solid transparent;
+    transition:transform .15s,box-shadow .18s,background .18s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--c-primary);color:#fff;box-shadow:var(--shadow-default)}
+  .btn-primary:hover{background:var(--c-primary-dark);box-shadow:var(--shadow-hover)}
+  .btn-ghost{background:transparent;color:var(--c-primary-dark);border-color:var(--c-line)}
+  .btn-ghost:hover{background:var(--c-primary-light);border-color:var(--c-primary)}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:8px 28px}
+  .stat-item{display:flex;flex-direction:column}
+  .stat-num{font-size:22px;font-weight:800;color:var(--c-primary-dark);line-height:1.2}
+  .stat-label{font-size:12px;color:var(--c-text-3);letter-spacing:.3px}
+  .hero-visual{position:relative;display:flex;justify-content:center}
+  .hero-visual svg{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 12px 30px rgba(30,70,90,.12))}
+  .hero-visual .ring{transform-origin:210px 210px;animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){
+    .hero-visual .ring{animation:none}
+    *{scroll-behavior:auto!important}
+    .btn:hover{transform:none}
+  }
+
+  /* ===== 主布局 ===== */
+  .layout{
+    max-width:var(--max-w);margin:0 auto;padding:0 20px 60px;
+    display:grid;
+    grid-template-columns:172px minmax(0,1fr) 246px;
+    gap:32px;
+    align-items:start;
+  }
+  .channel-nav{
+    position:sticky;top:calc(var(--sticky-h) + 12px);
+    background:var(--c-surface);
+    border-radius:var(--radius-card);
+    box-shadow:var(--shadow-default);
+    padding:14px 0;
+  }
+  .channel-nav h2{
+    font-size:13px;letter-spacing:1.5px;color:var(--c-text-3);
+    padding:0 16px 8px;font-weight:600;
+  }
+  .channel-nav a{
+    display:block;padding:8px 16px;font-size:13.5px;color:var(--c-text-2);
+    border-left:3px solid transparent;transition:background .15s,color .15s,border-color .15s;
+  }
+  .channel-nav a:hover,.channel-nav a:focus-visible{
+    background:var(--c-primary-light);color:var(--c-primary-dark);
+    border-left-color:var(--c-primary);outline:none;
+  }
+  .main-col{min-width:0}
+  .side-col{position:sticky;top:calc(var(--sticky-h) + 12px);display:flex;flex-direction:column;gap:22px}
+
+  /* ===== 板块通用 ===== */
+  .block{margin-bottom:44px}
+  .block:last-child{margin-bottom:0}
+  .block-head{margin-bottom:16px}
+  .block-head h2{
+    font-size:21px;font-weight:800;color:var(--c-primary-dark);
+    letter-spacing:-.3px;line-height:1.3;
+  }
+  .block-head .sub{font-size:13px;color:var(--c-text-3);margin-top:3px}
+  .tag{
+    display:inline-block;padding:2px 10px;border-radius:var(--radius-tag);
+    font-size:12px;font-weight:500;background:var(--c-primary-light);
+    color:var(--c-primary-dark);line-height:1.6;white-space:nowrap;
+  }
+  .tag-warm{background:#f7ece2;color:#8a5427}
+  .tag-plain{background:#eef0f1;color:var(--c-text-2)}
+
+  /* ===== 卡片网格 ===== */
+  .card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{
+    background:var(--c-surface);border-radius:var(--radius-card);
+    box-shadow:var(--shadow-default);overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:box-shadow .2s,transform .2s;
+  }
+  .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+  .card-thumb{aspect-ratio:4/3;overflow:hidden;background:#e8edf0}
+  .card-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .card:hover .card-thumb img{transform:scale(1.03)}
+  .card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card-title{font-size:15.5px;font-weight:700;line-height:1.45;color:var(--c-text)}
+  .card-desc{font-size:13px;color:var(--c-text-2);line-height:1.65;flex:1}
+  .card-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--c-text-3)}
+  .card-meta .score{color:var(--c-accent);font-weight:700}
+
+  /* ===== 紧凑列表 ===== */
+  .list-rows{background:var(--c-surface);border-radius:var(--radius-card);box-shadow:var(--shadow-default);overflow:hidden}
+  .list-row{
+    display:flex;gap:14px;padding:14px 18px;border-bottom:1px solid var(--c-line);
+    align-items:flex-start;transition:background .15s;
+  }
+  .list-row:last-child{border-bottom:none}
+  .list-row:hover{background:#fafbfb}
+  .row-num{
+    flex-shrink:0;width:24px;height:24px;border-radius:6px;
+    background:var(--c-primary-light);color:var(--c-primary-dark);
+    font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .row-main{flex:1;min-width:0}
+  .row-title{font-size:14.5px;font-weight:700;line-height:1.5;margin-bottom:2px}
+  .row-desc{font-size:13px;color:var(--c-text-2);line-height:1.6}
+  .row-side{flex-shrink:0;font-size:12px;color:var(--c-text-3);white-space:nowrap;margin-top:3px}
+
+  /* ===== 分类入口 ===== */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .cat-item{
+    background:var(--c-surface);border-radius:10px;padding:14px 12px;
+    box-shadow:var(--shadow-default);text-align:center;
+    border:1px solid transparent;transition:border-color .18s,box-shadow .18s;
+    font-size:13.5px;font-weight:600;color:var(--c-primary-dark);
+    display:block;
+  }
+  .cat-item:hover{border-color:var(--c-primary);box-shadow:var(--shadow-hover)}
+  .cat-item small{display:block;font-weight:400;font-size:11.5px;color:var(--c-text-3);margin-top:3px}
+
+  /* ===== 深度解析 ===== */
+  .article-box{
+    background:var(--c-surface);border-radius:var(--radius-card);
+    box-shadow:var(--shadow-default);padding:30px 34px;
+  }
+  .article-box h3{
+    font-size:17px;font-weight:800;color:var(--c-primary-dark);
+    margin:26px 0 10px;line-height:1.4;
+  }
+  .article-box h3:first-child{margin-top:0}
+  .article-box p{font-size:14.5px;color:var(--c-text-2);margin-bottom:12px;line-height:1.85}
+  .article-box ul{margin:8px 0 14px;padding-left:4px}
+  .article-box li{
+    position:relative;padding-left:18px;font-size:14px;color:var(--c-text-2);
+    margin-bottom:7px;line-height:1.75;
+  }
+  .article-box li::before{
+    content:"";position:absolute;left:0;top:10px;
+    width:6px;height:6px;border-radius:50%;background:var(--c-accent);
+  }
+  .article-box .note{
+    background:var(--c-primary-light);border-radius:8px;padding:12px 16px;
+    font-size:13.5px;color:var(--c-primary-dark);margin:14px 0;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-list{display:flex;flex-direction:column;gap:10px}
+  .faq-list details{
+    background:var(--c-surface);border-radius:10px;box-shadow:var(--shadow-default);
+    overflow:hidden;
+  }
+  .faq-list summary{
+    padding:14px 18px;font-size:14.5px;font-weight:600;color:var(--c-text);
+    cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;
+    transition:background .15s;
+  }
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::before{
+    content:"Q";flex-shrink:0;width:22px;height:22px;border-radius:6px;
+    background:var(--c-primary);color:#fff;font-size:12px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .faq-list summary:hover{background:#fafbfb}
+  .faq-list details[open] summary{color:var(--c-primary-dark)}
+  .faq-answer{padding:0 18px 16px 50px;font-size:13.5px;color:var(--c-text-2);line-height:1.8}
+
+  /* ===== 评论 ===== */
+  .comment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .comment-item{
+    background:var(--c-surface);border-radius:10px;padding:13px 16px;
+    box-shadow:var(--shadow-default);font-size:13px;line-height:1.7;
+    color:var(--c-text-2);
+  }
+  .comment-user{
+    display:flex;align-items:center;gap:8px;margin-bottom:6px;
+    font-size:12.5px;font-weight:700;color:var(--c-primary-dark);
+  }
+  .comment-avatar{
+    width:24px;height:24px;border-radius:50%;
+    background:var(--c-primary-light);color:var(--c-primary-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;flex-shrink:0;
+  }
+
+  /* ===== 资讯 ===== */
+  .news-list{display:flex;flex-direction:column;gap:0;background:var(--c-surface);border-radius:var(--radius-card);box-shadow:var(--shadow-default);overflow:hidden}
+  .news-item{padding:16px 20px;border-bottom:1px solid var(--c-line)}
+  .news-item:last-child{border-bottom:none}
+  .news-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-bottom:4px}
+  .news-title{font-size:14.5px;font-weight:700;color:var(--c-text)}
+  .news-date{font-size:12px;color:var(--c-text-3);white-space:nowrap}
+  .news-desc{font-size:13px;color:var(--c-text-2);line-height:1.65}
+
+  /* ===== 标签索引 ===== */
+  .tag-index{display:flex;flex-wrap:wrap;gap:8px}
+  .tag-index a{
+    display:inline-block;padding:5px 14px;border-radius:var(--radius-tag);
+    background:var(--c-surface);border:1px solid var(--c-line);
+    font-size:13px;color:var(--c-text-2);transition:all .18s;
+  }
+  .tag-index a:hover{border-color:var(--c-primary);background:var(--c-primary-light);color:var(--c-primary-dark)}
+
+  /* ===== 侧栏组件 ===== */
+  .side-box{
+    background:var(--c-surface);border-radius:var(--radius-card);
+    box-shadow:var(--shadow-default);padding:16px 18px;
+  }
+  .side-box h3{
+    font-size:14px;font-weight:800;color:var(--c-primary-dark);
+    margin-bottom:12px;letter-spacing:.3px;
+  }
+  .rank-item{display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed var(--c-line);align-items:flex-start}
+  .rank-item:last-child{border-bottom:none}
+  .rank-num{
+    flex-shrink:0;width:20px;height:20px;border-radius:5px;
+    background:var(--c-primary-light);color:var(--c-primary-dark);
+    font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  .rank-item:nth-child(2) .rank-num{background:var(--c-accent);color:#fff}
+  .rank-item:nth-child(3) .rank-num{background:#e2c9b4;color:#7a4d26}
+  .rank-text{font-size:13px;line-height:1.55;color:var(--c-text-2)}
+  .rank-text strong{color:var(--c-text);font-weight:700;display:block;font-size:13.5px}
+  .side-links{display:flex;flex-direction:column;gap:7px}
+  .side-links a{font-size:13px;color:var(--c-text-2);padding:4px 0;border-bottom:1px dashed var(--c-line);transition:color .15s}
+  .side-links a:last-child{border-bottom:none}
+  .side-links a:hover{color:var(--c-primary-dark)}
+  .side-note{font-size:12px;color:var(--c-text-3);margin-top:8px;line-height:1.6}
+
+  /* ===== 页脚 ===== */
+  .site-footer{
+    background:#1c2b31;color:#c9d6db;margin-top:20px;
+    padding:48px 20px 28px;
+  }
+  .footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .footer-brand svg{width:32px;height:32px}
+  .footer-brand span{font-size:17px;font-weight:800;color:#fff;letter-spacing:.4px}
+  .footer-pos{font-size:13px;line-height:1.8;color:#9fb2ba;max-width:340px}
+  .footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:.5px}
+  .footer-col a{display:block;font-size:12.5px;color:#9fb2ba;padding:3px 0;transition:color .15s}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{
+    max-width:var(--max-w);margin:32px auto 0;padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.1);
+    font-size:12px;color:#7e949d;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;
+  }
+
+  /* ===== 回到顶部 ===== */
+  .to-top{
+    position:fixed;right:22px;bottom:26px;z-index:90;
+    width:42px;height:42px;border-radius:50%;
+    background:var(--c-primary);color:#fff;border:none;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-hover);font-size:18px;
+    opacity:0;visibility:hidden;transform:translateY(10px);
+    transition:opacity .25s,visibility .25s,transform .25s,background .18s;
+  }
+  .to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+  .to-top:hover{background:var(--c-primary-dark)}
+  .to-top:focus-visible{outline:2px solid var(--c-accent);outline-offset:2px}
+
+  /* ===== 响应式 ===== */
+  @media (max-width:1080px){
+    .layout{grid-template-columns:180px minmax(0,1fr)}
+    .side-col{
+      grid-column:1 / -1;position:static;
+      display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+    }
+    .hero{grid-template-columns:1fr;gap:24px}
+    .hero-visual{order:-1}
+    .hero-visual svg{max-width:300px}
+    .footer-inner{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:860px){
+    .card-grid{grid-template-columns:1fr}
+    .comment-grid{grid-template-columns:1fr}
+    .cat-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:740px){
+    :root{--sticky-h:104px}
+    .notice-inner{gap:4px 14px;font-size:12px}
+    .header-inner{height:58px;gap:12px;flex-wrap:wrap}
+    .main-nav{
+      position:fixed;top:var(--sticky-h);left:0;right:0;
+      background:var(--c-surface);border-bottom:1px solid var(--c-line);
+      flex-direction:column;gap:0;padding:8px 16px 12px;
+      box-shadow:var(--shadow-hover);
+      transform:translateY(-8px);opacity:0;visibility:hidden;
+      transition:opacity .2s,transform .2s,visibility .2s;
+      max-height:calc(100vh - var(--sticky-h));overflow-y:auto;
+    }
+    .main-nav.open{transform:translateY(0);opacity:1;visibility:visible}
+    .main-nav a{padding:10px 8px;border-bottom:1px solid var(--c-line);border-radius:0}
+    .menu-toggle{display:block;margin-left:auto}
+    .search-box{order:3;width:100%;padding-bottom:8px}
+    .search-box input{width:100%}
+    .layout{grid-template-columns:1fr;gap:22px}
+    .channel-nav{
+      position:static;display:flex;flex-wrap:wrap;gap:6px;padding:10px;
+      border-radius:12px;
+    }
+    .channel-nav h2{width:100%;padding:0 6px 4px}
+    .channel-nav a{
+      display:inline-block;border-left:none;border-radius:20px;
+      padding:6px 12px;background:var(--c-bg);font-size:13px;
+    }
+    .channel-nav a:hover{border-left-color:transparent}
+    .side-col{grid-template-columns:1fr}
+    .article-box{padding:22px 18px}
+    .footer-inner{grid-template-columns:1fr}
+    .to-top{right:14px;bottom:16px;width:38px;height:38px}
+    .hero{padding:32px 20px 28px}
+  }
+  @media (max-width:400px){
+    .cat-grid{grid-template-columns:1fr}
+    .list-row{flex-wrap:wrap}
+    .row-side{width:100%;margin-top:2px}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="sticky-wrap">
+  <div class="notice-bar" id="noticeBar">
+    <div class="notice-inner">
+      <span class="notice-brand">水无濑优夏 作品</span>
+      <span class="notice-item"><time datetime="2026-11-08">11月8日</time><span class="dot">·</span>《雾港回声》角色设定集更新</span>
+      <span class="notice-item"><time datetime="2026-11-06">11月6日</time><span class="dot">·</span>广播剧《夏夜列车》第4话上线</span>
+      <span class="notice-item"><span class="dot">·</span>收录条目 <strong>86</strong> 条，本周新增 7 条</span>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="水无濑优夏 作品 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#2f6f8f"/>
+          <path d="M10 26c4-1 6-6 10-6s6 5 10 6" fill="none" stroke="#c07a4b" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="15" cy="15" r="2.2" fill="#f7f5f0"/>
+          <circle cx="25" cy="15" r="2.2" fill="#f7f5f0"/>
+        </svg>
+        <span class="brand-text">水无濑优夏 作品</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选作品</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#cats">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="搜索作品、角色…" aria-label="站内搜索">
+        <div class="search-empty" id="searchEmpty">未找到匹配内容</div>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <h1>水无濑优夏 作品</h1>
+    <p class="hero-desc">
+      从2026年秋季档《雾港回声》到广播剧《夏夜列车》，这里汇集水无濑优夏近两年参与的角色档案、共演企划与听众反馈。按作品类型、角色声线、播出时间交叉索引，适合想快速判断一部作品值不值得追的观众。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/#picks">浏览精选作品</a>
+      <a class="btn btn-ghost" href="/#updates">查看本周更新</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">86</span><span class="stat-label">收录条目</span></div>
+      <div class="stat-item"><span class="stat-num">27</span><span class="stat-label">角色档案</span></div>
+      <div class="stat-item"><span class="stat-num">11</span><span class="stat-label">本周更新</span></div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 420 420" role="presentation">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2f6f8f"/>
+          <stop offset="100%" stop-color="#1e4f68"/>
+        </linearGradient>
+        <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#c07a4b" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#e3f0f5" stop-opacity=".2"/>
+        </linearGradient>
+      </defs>
+      <circle cx="210" cy="210" r="190" fill="#e3f0f5"/>
+      <g class="ring">
+        <circle cx="210" cy="210" r="160" fill="none" stroke="#2f6f8f" stroke-width="1.2" stroke-dasharray="3 9" opacity=".5"/>
+        <circle cx="210" cy="210" r="130" fill="none" stroke="#c07a4b" stroke-width="1" stroke-dasharray="2 12" opacity=".45"/>
+      </g>
+      <circle cx="210" cy="210" r="95" fill="url(#g1)" opacity=".92"/>
+      <path d="M130 250c28-8 42-42 80-42s52 34 80 42" fill="none" stroke="#f7f5f0" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+      <circle cx="175" cy="188" r="7" fill="#f7f5f0"/>
+      <circle cx="245" cy="188" r="7" fill="#f7f5f0"/>
+      <path d="M150 120c40-18 80-18 120 0" fill="none" stroke="url(#g2)" stroke-width="5" stroke-linecap="round"/>
+      <text x="210" y="330" text-anchor="middle" font-size="13" fill="#1e4f68" font-family="sans-serif" letter-spacing="3" opacity=".8">MIZUNAYOSE YUKA</text>
+      <text x="210" y="352" text-anchor="middle" font-size="11" fill="#7f8f96" font-family="sans-serif" letter-spacing="2">WORKS INDEX 2024—2026</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 三栏主体 -->
+<div class="layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-nav" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <a href="/#overview">领域概览</a>
+    <a href="/#picks">精选作品</a>
+    <a href="/#updates">最新动态</a>
+    <a href="/#cats">分类入口</a>
+    <a href="/#deep">深度解析</a>
+    <a href="/#guide">体验指南</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#related">相关推荐</a>
+    <a href="/#extra">补充榜单</a>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col">
+
+    <!-- 1 领域概览 -->
+    <section class="block" id="overview">
+      <div class="block-head">
+        <h2>声优作品领域概览：角色声线与企划类型</h2>
+        <p class="sub">2024—2026年公开企划梳理</p>
+      </div>
+      <div class="article-box">
+        <p>水无濑优夏的公开作品大致分为四条线：电视动画配角与单元主角、广播剧CD、游戏角色配音、以及少量朗读剧与舞台活动。2025年之前，她的角色以“冷静型少女”和“带刺的优等生”为主，声线偏中低音区，尾音收得干净；2026年《雾港回声》里首次挑战带口音的渔村少女，发声位置明显前移，句尾多了气声拖腔。</p>
+        <p>目前值得关注的具体内容集中在三块。一是《雾港回声》第9话之后角色关系反转，她的台词量从每集8句左右涨到20句以上；二是广播剧《夏夜列车》全4话在11月6日完结，第4话末尾有一段2分17秒的独白，被听众截出来单独讨论；三是游戏《星落之街》10月版本更新后新增了她的羁绊剧情，共6段，每段约3分钟。</p>
+        <p>从企划类型看，她参与的动画以12集季番为主，广播剧多为单卷完结，游戏配音则集中在章节更新。想判断一部作品里她的戏份多少，看片尾字幕的排位比看宣传物料更准——《雾港回声》第11话她排在第4位，实际台词量却接近第二主角。</p>
+      </div>
+    </section>
+
+    <!-- 2 精选作品 -->
+    <section class="block" id="picks">
+      <div class="block-head">
+        <h2>精选作品推荐：六部可优先入门的条目</h2>
+        <p class="sub">按角色完成度与可听性筛选</p>
+      </div>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-wukou/400/300" width="400" height="300" loading="lazy" alt="雾港回声动画中渔村少女站在船头的场景">
+          </div>
+          <div class="card-body">
+            <span class="tag">电视动画</span>
+            <h3 class="card-title">《雾港回声》第9—12话</h3>
+            <p class="card-desc">渔村少女“阿澄”从配角升格为剧情支点。第10话她与主角在灯塔下的对话用了大量方言尾音，是全剧声音辨识度最高的一段。</p>
+            <div class="card-meta"><span class="score">8.7</span><span>更新至第12话</span><span>2026-10-24</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-xiaye/400/300" width="400" height="300" loading="lazy" alt="广播剧夏夜列车封面风格的夜色站台">
+          </div>
+          <div class="card-body">
+            <span class="tag tag-warm">广播剧</span>
+            <h3 class="card-title">《夏夜列车》第4话「终点之前」</h3>
+            <p class="card-desc">全4话完结篇，她饰演列车广播员。第4话末尾2分17秒独白没有配乐，只有轨道声垫底，语速从慢到快再收住。</p>
+            <div class="card-meta"><span class="score">9.1</span><span>全4话完结</span><span>2026-11-06</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-xingluo/400/300" width="400" height="300" loading="lazy" alt="星落之街游戏界面中角色羁绊剧情画面">
+          </div>
+          <div class="card-body">
+            <span class="tag">游戏配音</span>
+            <h3 class="card-title">《星落之街》羁绊剧情第3—6段</h3>
+            <p class="card-desc">10月版本新增6段羁绊剧情，第4段有一段与主角争执的戏，她刻意压低声线，和广播剧里的清脆感形成对照。</p>
+            <div class="card-meta"><span class="score">8.4</span><span>2026年10月更新</span><span>6段全解锁</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-bailu/400/300" width="400" height="300" loading="lazy" alt="白露学园动画中教室窗边的双人对峙场景">
+          </div>
+          <div class="card-body">
+            <span class="tag">电视动画</span>
+            <h3 class="card-title">《白露学园》第7话客串</h3>
+            <p class="card-desc">单集客串，饰演转学生“榎本”。戏份只有6分钟，但第7话结尾的质问段落被剪成短视频后在站外传播。</p>
+            <div class="card-meta"><span class="score">7.9</span><span>单集客串</span><span>2026-08-15</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-langdu/400/300" width="400" height="300" loading="lazy" alt="朗读剧舞台灯光下单人持稿站立的场景">
+          </div>
+          <div class="card-body">
+            <span class="tag tag-plain">朗读剧</span>
+            <h3 class="card-title">朗读剧《潮汐书信》10月场</h3>
+            <p class="card-desc">10月18日单场演出，她朗读了3封信件，其中第2封全程关掉麦克风用现场声，后排观众反馈听不清。</p>
+            <div class="card-meta"><span class="score">7.2</span><span>单场演出</span><span>2026-10-18</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/mizunase-yinyue/400/300" width="400" height="300" loading="lazy" alt="音乐企划角色穿着舞台服装站在霓虹灯前">
+          </div>
+          <div class="card-body">
+            <span class="tag">音乐企划</span>
+            <h3 class="card-title">《霓虹回声》角色歌「夜行」</h3>
+            <p class="card-desc">角色歌单曲，她负责念白部分而非主唱。念白在第二段副歌前插入，共11句，节奏比伴奏慢半拍，故意留下错位感。</p>
+            <div class="card-meta"><span class="score">8.0</span><span>数字单曲</span><span>2026-09-30</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="block" id="updates">
+      <div class="block-head">
+        <h2>最新更新与播出动态</h2>
+        <p class="sub">2026年10月28日—11月8日</p>
+      </div>
+      <div class="list-rows">
+        <div class="list-row">
+          <span class="row-num">1</span>
+          <div class="row-main">
+            <div class="row-title">《雾港回声》第12话播出，阿澄线收束</div>
+            <div class="row-desc">11月7日播出最终话，阿澄在码头与主角告别，台词共14句，片尾字幕排位第3。</div>
+          </div>
+          <span class="row-side">11月7日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">2</span>
+          <div class="row-main">
+            <div class="row-title">《夏夜列车》第4话独白片段被剪辑传播</div>
+            <div class="row-desc">11月6日上线后，B站出现多个2分17秒独白的剪辑版本，播放量最高的一条为4.2万。</div>
+          </div>
+          <span class="row-side">11月6日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">3</span>
+          <div class="row-main">
+            <div class="row-title">《星落之街》羁绊剧情第5段解锁条件调整</div>
+            <div class="row-desc">11月4日版本热更，第5段从需要通关第3章改为第2章即可解锁，玩家反馈解锁门槛降低。</div>
+          </div>
+          <span class="row-side">11月4日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">4</span>
+          <div class="row-main">
+            <div class="row-title">朗读剧《潮汐书信》11月场次公布</div>
+            <div class="row-desc">11月2日官方公布11月22日追加一场，曲目与10月场相同，但更换了第2封信件内容。</div>
+          </div>
+          <span class="row-side">11月2日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">5</span>
+          <div class="row-main">
+            <div class="row-title">《霓虹回声》角色歌「夜行」伴奏版公开</div>
+            <div class="row-desc">10月30日发布纯伴奏版本，念白部分留空，官方说明供翻唱使用，未设使用限制。</div>
+          </div>
+          <span class="row-side">10月30日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">6</span>
+          <div class="row-main">
+            <div class="row-title">《白露学园》第7话客串片段合集上线</div>
+            <div class="row-desc">10月28日官方频道上传6分钟客串片段，包含正片未收录的2句试音备用台词。</div>
+          </div>
+          <span class="row-side">10月28日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">7</span>
+          <div class="row-main">
+            <div class="row-title">广播剧《夏夜列车》设定资料集发售</div>
+            <div class="row-desc">10月26日发售，收录全4话台本与水无濑优夏的录音后记，共48页，其中后记2页。</div>
+          </div>
+          <span class="row-side">10月26日</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">8</span>
+          <div class="row-main">
+            <div class="row-title">《雾港回声》第11话方言监修访谈公开</div>
+            <div class="row-desc">10月24日官方发布3分钟访谈，方言监修提到第11话有4处发音调整，其中2处为重录。</div>
+          </div>
+          <span class="row-side">10月24日</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="block" id="cats">
+      <div class="block-head">
+        <h2>按作品类型与角色定位分类</h2>
+        <p class="sub">点击进入对应栏目</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#picks">电视动画<small>12部 · 含客串</small></a>
+        <a class="cat-item" href="/#picks">广播剧<small>9部 · 全4话完结</small></a>
+        <a class="cat-item" href="/#picks">游戏配音<small>6部 · 章节更新</small></a>
+        <a class="cat-item" href="/#picks">朗读剧<small>3场 · 2026年</small></a>
+        <a class="cat-item" href="/#picks">角色歌<small>5首 · 含念白</small></a>
+        <a class="cat-item" href="/#picks">单元客串<small>7集 · 单集完结</small></a>
+        <a class="cat-item" href="/#deep">声线对照<small>中低音区与气声</small></a>
+        <a class="cat-item" href="/#guide">入门路径<small>按戏份排序</small></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="block" id="deep">
+      <div class="block-head">
+        <h2>深度解析：同一把声音在四种媒介里的分化</h2>
+        <p class="sub">以2026年四部作品为样本</p>
+      </div>
+      <div class="article-box">
+        <h3>电视动画：方言腔调带来的发声位置前移</h3>
+        <p>《雾港回声》第9话有一场阿澄在码头卖鱼的戏，水无濑优夏把发声位置从口腔后部移到硬腭附近，句尾加上了向上挑的尾音。这种处理在动画配音里不常见——常规做法是用标准语加语气词来表现地方感，她选择直接模仿方言音调。</p>
+        <p>第11话方言监修的访谈里提到，阿澄的台词有4处发音被调整，其中“はよ”（快点）和“そげん”（那样）两处是重录。重录前的版本在第9话片尾的预告里还能听到半句，对比正片，能听出重录后的版本元音更扁，辅音更短。</p>
+        <div class="note">核对路径：第9话23分10秒的预告片段与第11话正片同一句台词对比，重录前后差异在“そげん”的ん音长度上，前者拖长0.4秒，后者收短。</div>
+        <p>这类调整说明一件事：动画配音里的方言处理，最终效果取决于监修环节放行到什么程度。第11话的版本更接近当地发音，但清晰度下降，不看字幕第一遍容易听成别的词。</p>
+
+        <h3>广播剧：关掉配乐之后的呼吸控制</h3>
+        <p>《夏夜列车》第4话的2分17秒独白没有配乐，只有轨道声垫底。这种处理把呼吸声完全暴露出来，听众能听见她每句话之间的换气节奏。第1分钟里换气点有5处，第2分钟降到3处，越往后气息越稳。</p>
+        <p>对比第1话的同一角色，第1话有配乐掩护，换气点平均每20秒一次，第4话拉长到每40秒一次。广播剧录音时通常要求演员离麦克风30厘米左右，这段独白据台本后记记载调整到了20厘米，近场收音让气声更明显。</p>
+
+        <h3>游戏配音：羁绊剧情的情绪梯度设计</h3>
+        <p>《星落之街》的6段羁绊剧情不是按顺序录的。第4段争执戏先录，第3段日常对话后录，结果第3段的语气比第4段更冷。10月版本更新后，有玩家在NGA发帖对比第3段和第4段的音量，发现第3段整体低3分贝左右。</p>
+        <ul>
+          <li>第1段：初见，语速偏快，句尾上扬</li>
+          <li>第3段：日常，语速平缓，句尾收平</li>
+          <li>第4段：争执，音量抬高，句尾带气声</li>
+          <li>第6段：和解，语速最慢，停顿最多</li>
+        </ul>
+        <p>这个梯度不是线性的，第3段反而比第1段更疏离。录音顺序造成的情绪错位，在游戏里被剧情顺序掩盖了，但单独把6段音频按顺序听一遍，能听出第3段是后来补录的——它的背景音里能听见空调的低频噪音，前两段没有。</p>
+
+        <h3>朗读剧：现场声与麦克风的取舍</h3>
+        <p>10月18日朗读剧《潮汐书信》第2封信全程关掉麦克风，用现场声朗读。前排能听清，后排反馈模糊。11月2日公布的11月22日追加场次，官方说明仍保留现场声处理，但会增加一块返听屏幕。这个决定把问题从“要不要用麦克风”变成了“怎么让后排看清口型”。</p>
+        <p>现场声的好处在第2封信的结尾——她念到“潮水退了”四个字时，声音压到几乎听不见，麦克风会把这个音量收进去放大，现场声则让它自然消失在剧场里。后排听不清，恰恰是这段设计的一部分。</p>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="block" id="guide">
+      <div class="block-head">
+        <h2>体验指南：从哪部开始、怎么判断戏份</h2>
+        <p class="sub">按投入时间与角色完成度排序</p>
+      </div>
+      <div class="article-box">
+        <p>第一次接触她的作品，建议从《夏夜列车》第4话开始。全4话加起来不到100分钟，第4话的独白是全系列声音完成度最高的一段，听完能快速判断自己喜不喜欢她的气声和尾音处理。</p>
+        <p>如果更想看角色而不是听声音，《雾港回声》第9话到第12话是完整的一条支线，共4集，约92分钟。看之前可以先跳到第11话23分10秒的预告片段，听一句方言台词，能接受这个口音再从头看。</p>
+        <p>判断一部作品里她戏份多少，有三个可核对的位置。一看片尾字幕排位：排在前5位的基本是主要角色，排在第6位之后多为单元配角。二看单集台词量：《雾港回声》第11话她台词20句以上，同剧第3话只有4句。三看官方物料：角色歌和设定资料集收录的角色，戏份通常不少。</p>
+        <p>同类作品比较时，广播剧和动画的听感差异最大。广播剧近场收音，呼吸声和口水音都保留；动画配音经过后期处理，气声被压掉一部分。同一个角色如果两边都有，先听广播剧版本，再听动画版本，能听出后期处理吃掉了多少细节。</p>
+      </div>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="block" id="faq">
+      <div class="block-head">
+        <h2>常见问答：作品、角色与收听顺序</h2>
+        <p class="sub">基于听众高频提问整理</p>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>《雾港回声》里阿澄的方言是本人配的吗？</summary>
+          <div class="faq-answer">正片方言台词由水无濑优夏本人完成，方言监修负责校正发音。第11话有4处调整，其中2处是她本人重录，另2处据10月24日访谈记录为监修现场口头指导后补录。</div>
+        </details>
+        <details>
+          <summary>《夏夜列车》第4话的独白有多长？</summary>
+          <div class="faq-answer">2分17秒，从第4话18分42秒开始，到21分00秒结束。这段没有配乐，只有轨道声垫底，台本后记里记录录音距离调整到了20厘米。</div>
+        </details>
+        <details>
+          <summary>《星落之街》的6段羁绊剧情怎么解锁？</summary>
+          <div class="faq-answer">第1到第4段随主线推进解锁，第5段在11月4日热更后改为通关第2章即可解锁，第6段需要第5段完成后在羁绊界面手动触发。6段全部解锁约需40分钟。</div>
+        </details>
+        <details>
+          <summary>朗读剧《潮汐书信》11月场和10月场内容一样吗？</summary>
+          <div class="faq-answer">曲目相同，但第2封信件更换了内容。10月场第2封是“写给父亲的信”，11月场据11月2日公告改为“写给十年后的信”，现场声处理方式保留。</div>
+        </details>
+        <details>
+          <summary>角色歌「夜行」里她唱了多少？</summary>
+          <div class="faq-answer">她只负责念白部分，共11句，集中在第二段副歌前。主唱是另一位歌手，念白节奏比伴奏慢半拍，是编曲时故意留的错位。</div>
+        </details>
+        <details>
+          <summary>想补她的早期作品，从哪部开始？</summary>
+          <div class="faq-answer">2024年的《白露学园》第7话客串只有6分钟，适合快速试听。2025年的广播剧《雨日信笺》全3话，是她第一次担任广播剧主役，戏份完整，约75分钟。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="block" id="comments">
+      <div class="block-head">
+        <h2>听众与观众评论</h2>
+        <p class="sub">2026年10月28日—11月8日</p>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">屿</span>屿声</div>《夏夜列车》第4话那段独白，我是在地铁上听的，轨道声和现实里的轨道声叠在一起，差点坐过站。2分17秒刚好是我从家到公司的一半路程。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">夏</span>夏目不是猫</div>《雾港回声》第11话的方言，我老家就是那个县的，她念“はよ”的调子不太对，偏标准语了。不过敢这么配已经不容易。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">T</span>Tsumugi</div>《星落之街》第3段和第4段语气差太多了，第3段冷得像陌生人，后来才知道是补录的。游戏里按剧情顺序听不出来，单独听很明显。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">七</span>七号站台</div>朗读剧10月场我坐后排，第2封信基本没听清，只听见几个词。11月场加了返听屏幕，有点犹豫要不要再买一次。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">阿</span>阿澄的鱼摊</div>阿澄这个角色写得好，卖鱼那场戏我以为她会哭，结果没有，就站在那儿把鱼一条条摆好。台词不多，但动作和声音对得上。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">L</span>Lento</div>「夜行」的念白比主唱部分耐听，11句里第7句停顿最长，每次听到那儿都会停下来想想。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">白</span>白露学园老粉</div>第7话客串只有6分钟，但结尾质问那段我刷了十几遍。转学生这个设定有点老套，声音救回来了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">小</span>小樽</div>广播剧设定资料集48页，后记只有2页，有点少。台本倒是完整，第4话独白的换气标记都印出来了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">星</span>星落不落</div>羁绊剧情第5段解锁条件改低之后，我十分钟就解锁了，反而有点失落，本来想多打两章的。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">K</span>Kaze</div>《雨日信笺》是我2025年听的，全3话，那时候她的声音比现在亮，尾音收得急。今年明显慢下来了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">一</span>一勺糖</div>不太喜欢「夜行」的念白设计，慢半拍听着难受，像卡带。可能是我没听懂编曲的意图。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">灰</span>灰鸽子</div>《雾港回声》第12话告别那段，她说了14句，我数了。最后一句没说完就切了镜头，留了个气口。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">M</span>Mizuki</div>10月18日朗读剧的票没抢到，看repo说现场声那段后排听不清，庆幸自己没去又有点后悔。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">海</span>海盐苏打</div>广播剧和动画的听感确实差很多，同一个角色两边听，广播剧里能听见吸气声，动画里全被压掉了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">夜</span>夜行列车员</div>《夏夜列车》第4话台本后记里写录音距离调到20厘米，难怪气声那么重。这个细节比宣传语有用。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">3</span>3号风扇</div>《星落之街》第6段和解戏语速最慢，慢到我以为游戏卡了。后来发现是故意的。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">乌</span>乌冬</div>白露学园第7话那两句备用台词，官方放出来的版本比正片里的自然，正片那句太用力了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="comment-avatar">花</span>花火</div>有没有人跟我一样，听广播剧的时候会把音量调大，动画反而调小，因为动画的后期太响了。</div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="block" id="news">
+      <div class="block-head">
+        <h2>相关资讯：作品动态与公开记录</h2>
+        <p class="sub">2026年10月24日—11月8日</p>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">《雾港回声》最终话播出，阿澄线共4集收束</span><time class="news-date" datetime="2026-11-07">11月7日</time></div>
+          <p class="news-desc">第12话片尾字幕显示阿澄排位第3，全剧台词量统计为89句，其中第11话占23句，为单集最高。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">《夏夜列车》第4话独白片段单平台播放量破4万</span><time class="news-date" datetime="2026-11-06">11月6日</time></div>
+          <p class="news-desc">上线后12小时内出现6个剪辑版本，最高一条播放量4.2万，评论区讨论集中在2分17秒处的换气声。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">《星落之街》热更调整羁绊剧情解锁条件</span><time class="news-date" datetime="2026-11-04">11月4日</time></div>
+          <p class="news-desc">第5段解锁从通关第3章改为第2章，官方说明为“降低体验门槛”，更新包大小约120MB。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">朗读剧《潮汐书信》追加11月场，更换第2封信</span><time class="news-date" datetime="2026-11-02">11月2日</time></div>
+          <p class="news-desc">11月22日单场，第2封信件改为“写给十年后的信”，现场声处理保留，新增返听屏幕一块。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">「夜行」伴奏版公开，念白部分留空</span><time class="news-date" datetime="2026-10-30">10月30日</time></div>
+          <p class="news-desc">官方说明供翻唱使用，未设使用限制，伴奏版比原版短11秒，删去的是念白前的过门。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-head"><span class="news-title">《白露学园》第7话客串片段收录试音备用台词</span><time class="news-date" datetime="2026-10-28">10月28日</time></div>
+          <p class="news-desc">官方频道上传6分钟片段，比正片多2句试音台词，字幕标注为“未采用版本”。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="block" id="related">
+      <div class="block-head">
+        <h2>相关推荐：可继续查阅的方向</h2>
+      </div>
+      <div class="tag-index">
+        <a href="/#picks">《雨日信笺》全3话</a>
+        <a href="/#picks">阿澄角色设定集</a>
+        <a href="/#picks">广播剧台本后记</a>
+        <a href="/#deep">方言监修访谈</a>
+        <a href="/#picks">《星落之街》第6段和解戏</a>
+        <a href="/#picks">朗读剧现场声处理</a>
+        <a href="/#picks">「夜行」念白节奏分析</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：榜单 -->
+    <section class="block" id="extra">
+      <div class="block-head">
+        <h2>补充榜单：2026年秋季作品热度排序</h2>
+        <p class="sub">按站内条目浏览与评论数综合排序</p>
+      </div>
+      <div class="list-rows">
+        <div class="list-row">
+          <span class="row-num">1</span>
+          <div class="row-main"><div class="row-title">《夏夜列车》第4话「终点之前」</div><div class="row-desc">独白片段带动全4话回听，评论数127条，为秋季作品最高。</div></div>
+          <span class="row-side">9.1分</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">2</span>
+          <div class="row-main"><div class="row-title">《雾港回声》第9—12话</div><div class="row-desc">方言处理引发讨论，第11话单集评论数68条，方言段落占三分之二。</div></div>
+          <span class="row-side">8.7分</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">3</span>
+          <div class="row-main"><div class="row-title">《星落之街》羁绊剧情第3—6段</div><div class="row-desc">解锁条件调整后评论数上升，第4段争执戏被单独讨论31次。</div></div>
+          <span class="row-side">8.4分</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">4</span>
+          <div class="row-main"><div class="row-title">《霓虹回声》角色歌「夜行」</div><div class="row-desc">念白设计评价两极，伴奏版公开后翻唱版本增加14个。</div></div>
+          <span class="row-side">8.0分</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">5</span>
+          <div class="row-main"><div class="row-title">《白露学园》第7话客串</div><div class="row-desc">单集客串，正片与备用台词对比是主要讨论点。</div></div>
+          <span class="row-side">7.9分</span>
+        </div>
+        <div class="list-row">
+          <span class="row-num">6</span>
+          <div class="row-main"><div class="row-title">朗读剧《潮汐书信》10月场</div><div class="row-desc">现场声处理引发后排听感讨论，11月场因此增加返听屏幕。</div></div>
+          <span class="row-side">7.2分</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="side-box">
+      <h3>本周角色热度</h3>
+      <div class="rank-item"><span class="rank-num">1</span><div class="rank-text"><strong>阿澄</strong>《雾港回声》 · 第12话告别戏</div></div>
+      <div class="rank-item"><span class="rank-num">2</span><div class="rank-text"><strong>列车广播员</strong>《夏夜列车》 · 第4话独白</div></div>
+      <div class="rank-item"><span class="rank-num">3</span><div class="rank-text"><strong>榎本</strong>《白露学园》 · 第7话客串</div></div>
+      <div class="rank-item"><span class="rank-num">4</span><div class="rank-text"><strong>星落主角</strong>《星落之街》 · 羁绊第4段</div></div>
+    </div>
+    <div class="side-box">
+      <h3>投稿与互动</h3>
+      <div class="side-links">
+        <a href="/#comments">发表一条评论</a>
+        <a href="/#picks">提交作品条目线索</a>
+        <a href="/#extra">参与秋季作品投票</a>
+      </div>
+      <p class="side-note">条目线索经核对后收录，评论即时显示。</p>
+    </div>
+    <div class="side-box">
+      <h3>快速查阅</h3>
+      <div class="side-links">
+        <a href="/#updates">11月6日《夏夜列车》完结</a>
+        <a href="/#updates">11月4日《星落之街》热更</a>
+        <a href="/#deep">方言监修访谈要点</a>
+        <a href="/#faq">6段羁绊解锁顺序</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="#2f6f8f"/>
+          <path d="M10 26c4-1 6-6 10-6s6 5 10 6" fill="none" stroke="#c07a4b" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="15" cy="15" r="2.2" fill="#f7f5f0"/>
+          <circle cx="25" cy="15" r="2.2" fill="#f7f5f0"/>
+        </svg>
+        <span>水无濑优夏 作品</span>
+      </div>
+      <p class="footer-pos">覆盖2024年1月至2026年11月的角色档案与作品条目，以电视动画、广播剧、游戏配音、朗读剧四类为主，每季度更新一次总索引，单集条目随播出同步追加。</p>
+    </div>
+    <div class="footer-col">
+      <h4>作品类型</h4>
+      <a href="/#picks">电视动画</a>
+      <a href="/#picks">广播剧</a>
+      <a href="/#picks">游戏配音</a>
+      <a href="/#picks">朗读剧</a>
+    </div>
+    <div class="footer-col">
+      <h4>查阅入口</h4>
+      <a href="/#overview">领域概览</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问答</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动</h4>
+      <a href="/#comments">用户评论</a>
+      <a href="/#extra">秋季榜单</a>
+      <a href="/#related">相关推荐</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>作品条目与角色信息按公开资料整理，示例数据仅用于内容展示。</span>
+    <span>最近更新：2026年11月8日 · 对应《雾港回声》第12话条目</span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  var toTop = document.getElementById('toTop');
+  var siteSearch = document.getElementById('siteSearch');
+  var searchEmpty = document.getElementById('searchEmpty');
+
+  /* 移动端菜单 */
+  function closeMenu(){
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.textContent = '☰';
+  }
+  menuToggle.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.textContent = open ? '✕' : '☰';
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 740){
+      closeMenu();
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && mainNav.classList.contains('open')){
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+  /* 点击外部关闭 */
+  document.addEventListener('click', function(e){
+    if(window.innerWidth <= 740 && mainNav.classList.contains('open')){
+      if(!mainNav.contains(e.target) && e.target !== menuToggle){
+        closeMenu();
+      }
+    }
+  });
+
+  /* 回到顶部 */
+  function onScroll(){
+    if(window.scrollY > window.innerHeight * 0.8){
+      toTop.classList.add('show');
+    }else{
+      toTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 站内搜索：查找可见内容 */
+  siteSearch.addEventListener('input', function(){
+    var q = this.value.trim().toLowerCase();
+    var blocks = document.querySelectorAll('.main-col .card, .main-col .list-row, .main-col .news-item, .main-col .comment-item, .main-col .faq-list details, .main-col .cat-item');
+    var found = 0;
+    blocks.forEach(function(el){
+      var text = (el.textContent || '').toLowerCase();
+      if(!q || text.indexOf(q) !== -1){
+        el.style.display = '';
+        if(q) found++;
+      }else{
+        el.style.display = 'none';
+      }
+    });
+    if(q && found === 0){
+      searchEmpty.classList.add('show');
+    }else{
+      searchEmpty.classList.remove('show');
+    }
+  });
+  siteSearch.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ this.value=''; this.dispatchEvent(new Event('input')); this.blur(); }
+  });
+
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "水无濑优夏 作品",
+  "description": "水无濑优夏 作品索引：收录2026年10月至11月更新的角色档案、共演作品、广播剧与评论，适合关注声优作品与角色解析的读者查阅。",
+  "inLanguage": "zh-CN",
+  "about": {
+    "@type": "Person",
+    "name": "水无濑优夏"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《雾港回声》里阿澄的方言是本人配的吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "正片方言台词由水无濑优夏本人完成，方言监修负责校正发音。第11话有4处调整，其中2处是她本人重录，另2处据10月24日访谈记录为监修现场口头指导后补录。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《夏夜列车》第4话的独白有多长？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2分17秒，从第4话18分42秒开始，到21分00秒结束。这段没有配乐，只有轨道声垫底，台本后记里记录录音距离调整到了20厘米。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《星落之街》的6段羁绊剧情怎么解锁？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第1到第4段随主线推进解锁，第5段在11月4日热更后改为通关第2章即可解锁，第6段需要第5段完成后在羁绊界面手动触发。6段全部解锁约需40分钟。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "朗读剧《潮汐书信》11月场和10月场内容一样吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "曲目相同，但第2封信件更换了内容。10月场第2封是“写给父亲的信”，11月场据11月2日公告改为“写给十年后的信”，现场声处理方式保留。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "角色歌「夜行」里她唱了多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "她只负责念白部分，共11句，集中在第二段副歌前。主唱是另一位歌手，念白节奏比伴奏慢半拍，是编曲时故意留的错位。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "想补她的早期作品，从哪部开始？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2024年的《白露学园》第7话客串只有6分钟，适合快速试听。2025年的广播剧《雨日信笺》全3话，是她第一次担任广播剧主役，戏份完整，约75分钟。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+                                                </html>
