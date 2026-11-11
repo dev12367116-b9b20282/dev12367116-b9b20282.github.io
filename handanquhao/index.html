@@ -1,0 +1,1414 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>邯郸区号查询 - 电话区号邮编与属地速查</title>
+<meta name="description" content="邯郸区号查询提供0310区号覆盖范围、邯郸各区县电话区号与邮编对照、外地拨打写法、常见误拨原因及号码归属判断方法，适合出差办事、寄件填单和核对来电的人参考。">
+<meta name="keywords" content="邯郸区号查询">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b4f8a'/%3E%3Cpath d='M18 22c0-3 2-5 5-5h4c1 0 2 1 2 2l1 6c0 1 0 2-1 3l-3 2c2 5 5 8 10 10l2-3c1-1 2-1 3-1l6 1c1 0 2 1 2 2v4c0 3-2 5-5 5C30 48 18 36 18 22z' fill='%23ffffff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#1b4f8a;
+  --brand-light:#e8f0f9;
+  --brand-mid:#3b76b8;
+  --brand-dark:#123a68;
+  --accent:#c4622d;
+  --bg:#f5f7fa;
+  --panel:#ffffff;
+  --text:#1d2530;
+  --text-2:#4a5568;
+  --text-3:#8592a3;
+  --line:#e2e8f0;
+  --line-soft:#eef2f7;
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-tag:5px;
+  --radius-banner:14px;
+  --shadow:0 1px 3px rgba(24,40,64,.07),0 4px 12px rgba(24,40,64,.05);
+  --shadow-hover:0 4px 10px rgba(24,40,64,.10),0 10px 26px rgba(24,40,64,.09);
+  --notice-h:34px;
+  --header-h:62px;
+  --stick:calc(var(--notice-h) + var(--header-h));
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--stick) + 14px)}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--brand);text-decoration:none}
+a:hover{color:var(--brand-dark)}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brand-mid);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶公告条 ---------- */
+.notice{
+  position:sticky;top:0;z-index:60;
+  height:var(--notice-h);
+  background:linear-gradient(90deg,var(--brand-dark),var(--brand));
+  color:#dce8f6;
+  font-size:12.5px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.notice-inner{
+  max-width:1360px;width:100%;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:14px;
+}
+.notice-brand{
+  color:#fff;font-weight:600;letter-spacing:.5px;
+  padding-right:14px;border-right:1px solid rgba(255,255,255,.28);
+  white-space:nowrap;
+}
+.notice-track{
+  display:flex;gap:26px;white-space:nowrap;
+  overflow-x:auto;scrollbar-width:none;
+}
+.notice-track::-webkit-scrollbar{display:none}
+.notice-item{display:inline-flex;align-items:center;gap:7px}
+.notice-item time{color:#ffd9a8;font-variant-numeric:tabular-nums}
+.notice-item b{color:#fff;font-weight:600}
+.notice-dot{width:5px;height:5px;border-radius:50%;background:#ffb86b;flex:none}
+
+/* ---------- 页头 ---------- */
+.header{
+  position:sticky;top:var(--notice-h);z-index:55;
+  height:var(--header-h);
+  background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(1.6) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1360px;margin:0 auto;padding:0 20px;height:100%;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:9px;flex:none}
+.logo svg{width:34px;height:34px;flex:none}
+.logo-text{font-size:18px;font-weight:700;color:var(--brand-dark);letter-spacing:.5px;white-space:nowrap}
+.main-nav{display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none;min-width:0}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  padding:7px 11px;border-radius:var(--radius-btn);
+  font-size:14px;color:var(--text-2);white-space:nowrap;
+  transition:background .18s,color .18s;
+}
+.main-nav a:hover{background:var(--brand-light);color:var(--brand-dark)}
+.search-box{display:flex;align-items:center;gap:6px;flex:none;position:relative}
+.search-box input{
+  width:172px;height:34px;padding:0 12px;
+  border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:#fff;font-size:13.5px;color:var(--text);
+  transition:border-color .18s,width .2s;
+}
+.search-box input:focus{outline:none;border-color:var(--brand-mid);width:200px}
+.search-box button{
+  height:34px;padding:0 13px;border:none;border-radius:var(--radius-btn);
+  background:var(--brand);color:#fff;font-size:13.5px;font-weight:500;
+  transition:background .18s;
+}
+.search-box button:hover{background:var(--brand-dark)}
+.search-tip{
+  position:absolute;top:40px;left:0;right:0;min-width:250px;
+  background:#fff;border:1px solid var(--line);border-radius:10px;
+  box-shadow:var(--shadow-hover);padding:8px 12px;font-size:13px;
+  color:var(--text-2);display:none;z-index:70;
+}
+.search-tip.show{display:block}
+.search-tip strong{color:var(--accent)}
+.hamburger{
+  display:none;width:38px;height:38px;flex:none;
+  border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:#fff;align-items:center;justify-content:center;
+}
+.hamburger span{display:block;width:17px;height:2px;background:var(--text);position:relative}
+.hamburger span::before,.hamburger span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--text);
+}
+.hamburger span::before{top:-5px}
+.hamburger span::after{top:5px}
+
+/* 移动抽屉 */
+.drawer-mask{
+  position:fixed;inset:0;background:rgba(18,32,50,.45);
+  opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s;z-index:80;
+}
+.drawer-mask.show{opacity:1;visibility:visible}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(78vw,300px);
+  background:#fff;z-index:85;transform:translateX(100%);
+  transition:transform .26s ease;display:flex;flex-direction:column;
+  box-shadow:-8px 0 30px rgba(18,32,50,.18);
+}
+.drawer.show{transform:translateX(0)}
+.drawer-head{
+  padding:16px 18px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.drawer-head b{font-size:15px;color:var(--brand-dark)}
+.drawer-close{
+  width:32px;height:32px;border:1px solid var(--line);background:#fff;
+  border-radius:50%;font-size:17px;color:var(--text-2);line-height:1;
+}
+.drawer-nav{padding:10px;overflow-y:auto;flex:1}
+.drawer-nav a{
+  display:block;padding:11px 12px;border-radius:var(--radius-btn);
+  font-size:14.5px;color:var(--text-2);
+}
+.drawer-nav a:hover{background:var(--brand-light);color:var(--brand-dark)}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  background:
+    radial-gradient(circle at 82% 18%,rgba(59,118,184,.16),transparent 46%),
+    radial-gradient(circle at 12% 88%,rgba(196,98,45,.10),transparent 42%),
+    linear-gradient(165deg,#0f3157 0%,#17456f 46%,#1f5787 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:1360px;margin:0 auto;padding:52px 20px 46px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.6px;color:#a8c8e8;
+  border:1px solid rgba(168,200,232,.4);border-radius:30px;
+  padding:4px 13px;margin-bottom:18px;
+}
+.hero h1{
+  font-size:40px;line-height:1.24;font-weight:800;letter-spacing:1px;
+  margin-bottom:16px;
+}
+.hero-desc{
+  font-size:15.5px;line-height:1.85;color:#cbdcf0;max-width:540px;
+  margin-bottom:24px;
+}
+.hero-desc b{color:#fff;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn-primary,.btn-ghost{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 20px;border-radius:var(--radius-btn);font-size:14px;font-weight:600;
+  transition:transform .18s,background .18s,box-shadow .18s;border:1px solid transparent;
+}
+.btn-primary{background:#fff;color:var(--brand-dark);box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.btn-primary:hover{transform:translateY(-2px);color:var(--brand-dark);box-shadow:0 8px 20px rgba(0,0,0,.24)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#e4eefb;border-color:rgba(255,255,255,.32)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);color:#fff;transform:translateY(-2px)}
+.hero-facts{
+  display:flex;gap:26px;flex-wrap:wrap;
+  padding-top:20px;border-top:1px solid rgba(255,255,255,.16);
+}
+.hero-fact b{display:block;font-size:19px;font-weight:700;color:#ffd9a8;font-variant-numeric:tabular-nums}
+.hero-fact span{font-size:12.5px;color:#a8c8e8}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.dial-card{
+  width:100%;max-width:352px;background:rgba(255,255,255,.97);
+  border-radius:var(--radius-banner);padding:22px 22px 18px;
+  box-shadow:0 18px 44px rgba(4,18,36,.34);color:var(--text);
+  animation:floatIn .8s ease both;
+}
+@keyframes floatIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.dial-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.dial-top span{font-size:12px;color:var(--text-3);letter-spacing:1px}
+.dial-top em{font-style:normal;font-size:11.5px;background:#e7f4ec;color:#227a4b;padding:2px 8px;border-radius:20px}
+.dial-num{
+  display:flex;align-items:baseline;gap:6px;
+  font-size:44px;font-weight:800;color:var(--brand-dark);
+  letter-spacing:2px;font-variant-numeric:tabular-nums;line-height:1.1;
+}
+.dial-num small{font-size:14px;font-weight:600;color:var(--text-3);letter-spacing:0}
+.dial-sub{font-size:13px;color:var(--text-2);margin:6px 0 16px}
+.dial-rows{border-top:1px dashed var(--line);padding-top:12px;display:grid;gap:8px}
+.dial-row{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.dial-row span{color:var(--text-3)}
+.dial-row b{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.dial-badge{
+  position:absolute;right:-6px;top:-14px;
+  background:var(--accent);color:#fff;font-size:12px;font-weight:600;
+  padding:5px 12px;border-radius:20px;box-shadow:0 6px 16px rgba(196,98,45,.4);
+}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:1360px;margin:0 auto;padding:0 20px}
+.layout{
+  display:grid;grid-template-columns:212px minmax(0,1fr) 292px;
+  gap:26px;align-items:start;padding:32px 0 10px;
+}
+.side{position:sticky;top:calc(var(--stick) + 16px)}
+.side-panel{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;
+  margin-bottom:16px;
+}
+.side-title{
+  padding:13px 16px;font-size:13.5px;font-weight:700;color:var(--brand-dark);
+  border-bottom:1px solid var(--line-soft);letter-spacing:.5px;
+  display:flex;align-items:center;gap:7px;
+}
+.side-title::before{content:"";width:3px;height:13px;background:var(--accent);border-radius:2px}
+.channel-list{padding:6px}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:8px 11px;border-radius:var(--radius-btn);
+  font-size:13.5px;color:var(--text-2);transition:background .16s,color .16s;
+}
+.channel-list a:hover,.channel-list a.active{background:var(--brand-light);color:var(--brand-dark);font-weight:600}
+.channel-list a em{font-style:normal;font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.channel-list a.active em{color:var(--brand-mid)}
+
+/* 主内容 */
+.main{min-width:0;display:flex;flex-direction:column;gap:26px}
+.card-block{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-card);box-shadow:var(--shadow);padding:24px 26px;
+}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap}
+.block-head h2{
+  font-size:20px;font-weight:700;color:var(--text);letter-spacing:.4px;line-height:1.35;
+}
+.block-head h2 small{
+  display:inline-block;margin-left:9px;font-size:12px;font-weight:500;
+  color:var(--text-3);letter-spacing:0;
+}
+.block-more{font-size:13px;color:var(--brand);white-space:nowrap}
+.block-lead{font-size:13.5px;color:var(--text-2);line-height:1.8;margin:-6px 0 16px}
+
+/* 概览 */
+.overview p{font-size:14.5px;line-height:1.9;color:var(--text-2);margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview b{color:var(--text);font-weight:600}
+.overview .inline-tag{
+  display:inline-block;background:var(--brand-light);color:var(--brand-dark);
+  font-size:12.5px;padding:1px 7px;border-radius:var(--radius-tag);font-weight:600;margin:0 1px;
+}
+
+/* 推荐卡片 */
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px}
+.pick-card{
+  border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;
+  background:#fff;transition:box-shadow .2s,transform .2s,border-color .2s;
+  display:flex;flex-direction:column;
+}
+.pick-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:#cfdcea}
+.pick-card img{width:100%;height:118px;object-fit:cover;background:var(--line-soft)}
+.pick-body{padding:12px 13px 13px;display:flex;flex-direction:column;gap:7px;flex:1}
+.pick-type{
+  align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:.4px;
+  color:var(--brand-dark);background:var(--brand-light);
+  padding:2px 7px;border-radius:var(--radius-tag);
+}
+.pick-type.t2{color:#8a4a1c;background:#fdf0e6}
+.pick-type.t3{color:#1f6b4a;background:#e6f5ec}
+.pick-title{font-size:14.5px;font-weight:700;line-height:1.5;color:var(--text)}
+.pick-note{font-size:12.5px;line-height:1.72;color:var(--text-2);flex:1}
+.pick-tags{display:flex;flex-wrap:wrap;gap:5px}
+.pick-tags span{font-size:11.5px;color:var(--text-3);background:var(--line-soft);padding:1px 6px;border-radius:var(--radius-tag)}
+.pick-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:11.5px;color:var(--text-3);padding-top:7px;border-top:1px solid var(--line-soft);
+  font-variant-numeric:tabular-nums;
+}
+.pick-meta b{color:var(--accent);font-weight:700}
+
+/* 动态列表 */
+.feed{display:grid;gap:0}
+.feed li{
+  display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;
+  padding:11px 0;border-bottom:1px dashed var(--line);
+}
+.feed li:last-child{border-bottom:none;padding-bottom:0}
+.feed li:first-child{padding-top:0}
+.feed time{font-size:12.5px;color:var(--text-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.feed-txt b{font-size:14px;color:var(--text);font-weight:700;display:block;margin-bottom:2px}
+.feed-txt span{font-size:13px;color:var(--text-2);line-height:1.7}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px}
+.cat-item{
+  display:flex;flex-direction:column;gap:3px;
+  padding:12px 13px;border:1px solid var(--line);border-radius:10px;
+  background:#fbfcfe;transition:border-color .18s,background .18s,transform .18s;
+}
+.cat-item:hover{border-color:var(--brand-mid);background:var(--brand-light);transform:translateY(-2px)}
+.cat-item b{font-size:13.5px;color:var(--text)}
+.cat-item span{font-size:11.5px;color:var(--text-3);line-height:1.55}
+.cat-item em{font-style:normal;font-size:11.5px;color:var(--brand);font-variant-numeric:tabular-nums}
+
+/* 深度解析 */
+.deep h3{
+  font-size:16px;font-weight:700;color:var(--brand-dark);
+  margin:22px 0 9px;padding-left:11px;border-left:3px solid var(--accent);line-height:1.4;
+}
+.deep h3:first-of-type{margin-top:4px}
+.deep p{font-size:14.5px;line-height:1.92;color:var(--text-2);margin-bottom:11px}
+.deep b{color:var(--text);font-weight:600}
+.deep ul{margin:8px 0 13px;padding-left:2px;display:grid;gap:7px}
+.deep ul li{
+  font-size:14px;line-height:1.8;color:var(--text-2);
+  padding-left:16px;position:relative;
+}
+.deep ul li::before{
+  content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;
+  border-radius:2px;background:var(--brand-mid);
+}
+.deep .quote{
+  background:var(--brand-light);border-left:3px solid var(--brand-mid);
+  padding:11px 15px;border-radius:0 8px 8px 0;font-size:13.5px;
+  color:var(--brand-dark);line-height:1.8;margin:12px 0;
+}
+/* 对照表 */
+.cmp{width:100%;border-collapse:collapse;margin:12px 0 6px;font-size:13.5px}
+.cmp th,.cmp td{border:1px solid var(--line);padding:8px 10px;text-align:left;line-height:1.65}
+.cmp th{background:var(--brand-light);color:var(--brand-dark);font-weight:600;font-size:13px}
+.cmp td{color:var(--text-2)}
+.cmp tr:nth-child(even) td{background:#fbfcfe}
+
+/* 指南步骤 */
+.steps{display:grid;gap:12px;counter-reset:step}
+.step{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:13px;
+  padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;
+}
+.step::before{
+  counter-increment:step;content:counter(step);
+  width:30px;height:30px;border-radius:8px;background:var(--brand);color:#fff;
+  font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.step b{font-size:14px;display:block;margin-bottom:3px;color:var(--text)}
+.step p{font-size:13px;line-height:1.75;color:var(--text-2)}
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line);border-radius:10px;margin-bottom:9px;
+  background:#fbfcfe;overflow:hidden;transition:border-color .18s;
+}
+.faq details[open]{border-color:var(--brand-mid);background:#fff}
+.faq summary{
+  padding:12px 15px;font-size:14px;font-weight:600;color:var(--text);
+  cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";font-size:17px;color:var(--brand-mid);font-weight:400;flex:none;
+  transition:transform .2s;
+}
+.faq details[open] summary::after{content:"−"}
+.faq .ans{padding:0 15px 13px;font-size:13.5px;line-height:1.85;color:var(--text-2)}
+.faq .ans b{color:var(--text)}
+
+/* 评论 */
+.cmt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:11px}
+.cmt{
+  padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;
+}
+.cmt-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;background:var(--brand-mid);
+}
+.avatar.c2{background:#c4622d}.avatar.c3{background:#2f7a5c}
+.avatar.c4{background:#6c5aa8}.avatar.c5{background:#a8547a}
+.cmt-head b{font-size:12.5px;color:var(--text-2);font-weight:600}
+.cmt-head time{font-size:11px;color:var(--text-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.cmt p{font-size:13px;line-height:1.78;color:var(--text-2)}
+.cmt p em{font-style:normal;color:var(--brand-dark);font-weight:600}
+
+/* 资讯 */
+.news{display:grid;gap:0}
+.news li{
+  padding:12px 0;border-bottom:1px dashed var(--line);
+  display:grid;gap:4px;
+}
+.news li:last-child{border-bottom:none;padding-bottom:0}
+.news li:first-child{padding-top:0}
+.news-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.news-top b{font-size:14.5px;color:var(--text);font-weight:700}
+.news-top time{font-size:12px;color:var(--text-3);font-variant-numeric:tabular-nums}
+.news p{font-size:13px;line-height:1.75;color:var(--text-2)}
+
+/* 推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:8px}
+.rec-tags a{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;border:1px solid var(--line);border-radius:20px;
+  font-size:13px;color:var(--text-2);background:#fbfcfe;
+  transition:border-color .16s,color .16s,background .16s;
+}
+.rec-tags a:hover{border-color:var(--brand-mid);background:var(--brand-light);color:var(--brand-dark)}
+.rec-tags a i{font-style:normal;font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums}
+
+/* 榜单 */
+.rank{display:grid;gap:0}
+.rank li{
+  display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:11px;align-items:center;
+  padding:9px 0;border-bottom:1px dashed var(--line);
+}
+.rank li:last-child{border-bottom:none;padding-bottom:0}
+.rank li:first-child{padding-top:0}
+.rank-no{
+  width:22px;height:22px;border-radius:6px;background:var(--line-soft);
+  color:var(--text-3);font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums;
+}
+.rank li:nth-child(1) .rank-no{background:var(--accent);color:#fff}
+.rank li:nth-child(2) .rank-no{background:#e08d4f;color:#fff}
+.rank li:nth-child(3) .rank-no{background:#eab27c;color:#fff}
+.rank-name{font-size:13.5px;color:var(--text);line-height:1.55}
+.rank-name small{display:block;font-size:11.5px;color:var(--text-3)}
+.rank-val{font-size:12.5px;color:var(--brand);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* 投稿互动 */
+.submit-panel{
+  background:linear-gradient(135deg,#eef4fb,#f7fafd);
+  border:1px solid #d8e5f2;border-radius:var(--radius-card);padding:22px 24px;
+}
+.submit-panel h2{font-size:18px;margin-bottom:8px;color:var(--brand-dark)}
+.submit-panel p{font-size:13.5px;color:var(--text-2);line-height:1.85;margin-bottom:14px}
+.submit-form{display:grid;grid-template-columns:1fr 1fr auto;gap:9px}
+.submit-form input,.submit-form select{
+  height:38px;padding:0 12px;font-size:13.5px;
+  border:1px solid #cddceb;border-radius:var(--radius-btn);background:#fff;color:var(--text);
+}
+.submit-form input:focus,.submit-form select:focus{outline:none;border-color:var(--brand-mid)}
+.submit-form button{
+  height:38px;padding:0 20px;border:none;border-radius:var(--radius-btn);
+  background:var(--brand);color:#fff;font-size:13.5px;font-weight:600;
+  transition:background .18s;
+}
+.submit-form button:hover{background:var(--brand-dark)}
+.submit-msg{font-size:12.5px;color:#227a4b;margin-top:8px;display:none}
+.submit-msg.show{display:block}
+
+/* 右栏 */
+.hot-list{padding:8px 14px 12px}
+.hot-list li{padding:7px 0;border-bottom:1px dashed var(--line-soft);display:flex;gap:9px;align-items:baseline}
+.hot-list li:last-child{border-bottom:none}
+.hot-list li a{font-size:13px;color:var(--text-2);line-height:1.6}
+.hot-list li a:hover{color:var(--brand-dark)}
+.hot-no{font-size:11.5px;color:var(--text-3);font-variant-numeric:tabular-nums;flex:none;width:14px}
+.hot-list li:nth-child(-n+3) .hot-no{color:var(--accent);font-weight:700}
+.upd-list{padding:8px 14px 12px}
+.upd-list li{display:flex;justify-content:space-between;gap:9px;padding:6px 0;font-size:12.5px;color:var(--text-2);border-bottom:1px dashed var(--line-soft)}
+.upd-list li:last-child{border-bottom:none}
+.upd-list time{color:var(--text-3);font-variant-numeric:tabular-nums;flex:none}
+.side-note{
+  padding:13px 15px;font-size:12.5px;line-height:1.8;color:var(--text-2);
+  background:#fbfcfe;border-top:1px solid var(--line-soft);
+}
+.side-note b{color:var(--brand-dark)}
+
+/* 页尾 */
+.footer{
+  margin-top:42px;background:#0f2a47;color:#a9c0d6;
+  padding:38px 0 22px;
+}
+.footer-inner{max-width:1360px;margin:0 auto;padding:0 20px}
+.footer-top{display:grid;grid-template-columns:1.4fr 2.6fr;gap:36px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.footer-brand svg{width:30px;height:30px}
+.footer-brand b{font-size:16px;color:#fff;letter-spacing:.5px}
+.footer-desc{font-size:13px;line-height:1.85;color:#93aec8;max-width:340px}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.footer-col h4{font-size:13px;color:#fff;margin-bottom:9px;font-weight:600}
+.footer-col a{display:block;font-size:12.5px;color:#93aec8;padding:3px 0;line-height:1.6}
+.footer-col a:hover{color:#ffd9a8}
+.footer-bottom{
+  padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12px;color:#7d97b1;line-height:1.8;
+}
+.footer-bottom b{color:#b8cde1;font-weight:500}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;z-index:50;
+  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+  background:#fff;color:var(--brand-dark);font-size:16px;
+  box-shadow:var(--shadow-hover);display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .22s,visibility .22s,transform .22s,background .18s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--brand-light)}
+
+/* 响应式 */
+@media (max-width:1180px){
+  .layout{grid-template-columns:200px minmax(0,1fr);}
+  .side-right{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-visual{justify-content:flex-start}
+  .dial-card{max-width:380px}
+}
+@media (max-width:1024px){
+  .main-nav{display:none}
+  .hamburger{display:flex}
+  .search-box input{width:140px}
+  .search-box input:focus{width:160px}
+  .hero h1{font-size:33px}
+  .footer-top{grid-template-columns:1fr;gap:24px}
+  .submit-form{grid-template-columns:1fr 1fr}
+  .submit-form button{grid-column:1/-1}
+}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;}
+  .side{position:static;order:2}
+  .side-panel{margin-bottom:0}
+  .side-left .channel-list{display:flex;flex-wrap:wrap;gap:5px;padding:8px}
+  .side-left .channel-list a{flex:1 1 auto;justify-content:center;min-width:104px}
+  .side-left .channel-list a em{display:none}
+}
+@media (max-width:740px){
+  :root{--header-h:56px;--notice-h:32px}
+  body{font-size:14.5px}
+  .wrap,.header-inner,.notice-inner,.hero-inner,.footer-inner{padding-left:14px;padding-right:14px}
+  .logo-text{font-size:16px}
+  .search-box{display:none}
+  .hero-inner{padding-top:34px;padding-bottom:34px}
+  .hero h1{font-size:27px;letter-spacing:.5px}
+  .hero-desc{font-size:14px}
+  .hero-facts{gap:18px}
+  .hero-fact b{font-size:17px}
+  .dial-card{padding:18px 18px 15px}
+  .dial-num{font-size:36px}
+  .card-block{padding:18px 16px}
+  .block-head h2{font-size:17.5px}
+  .pick-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .pick-card img{height:98px}
+  .pick-title{font-size:13.5px}
+  .pick-note{font-size:12px}
+  .feed li{grid-template-columns:1fr;gap:2px}
+  .feed time{font-size:11.5px}
+  .cmt-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr 1fr}
+  .cmp{font-size:12.5px}
+  .cmp th,.cmp td{padding:6px 7px}
+  .submit-form{grid-template-columns:1fr}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .to-top{right:14px;bottom:16px;width:38px;height:38px}
+  .notice-item:nth-child(n+3){display:none}
+}
+@media (max-width:400px){
+  .pick-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr}
+  .hero h1{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice" id="noticeBar">
+  <div class="notice-inner">
+    <span class="notice-brand">邯郸区号查询</span>
+    <div class="notice-track">
+      <span class="notice-item"><span class="notice-dot"></span><time datetime="2026-11-08">11月8日</time><b>0310 覆盖区县对照表</b>更新至 18 个区县</span>
+      <span class="notice-item"><span class="notice-dot"></span><time datetime="2026-11-06">11月6日</time><b>武安市固话升位</b>号段说明补录</span>
+      <span class="notice-item"><span class="notice-dot"></span><time datetime="2026-11-03">11月3日</time><b>外地拨打写法</b>新增 3 个易错示例</span>
+      <span class="notice-item"><span class="notice-dot"></span><time datetime="2026-10-29">10月29日</time><b>邮编对照</b>新增峰峰矿区 4 条</span>
+    </div>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="/#top" aria-label="邯郸区号查询 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b4f8a"/>
+        <path d="M18 22c0-3 2-5 5-5h4c1 0 2 1 2 2l1 6c0 1 0 2-1 3l-3 2c2 5 5 8 10 10l2-3c1-1 2-1 3-1l6 1c1 0 2 1 2 2v4c0 3-2 5-5 5C30 48 18 36 18 22z" fill="#ffffff"/>
+        <text x="43" y="30" font-family="Arial" font-size="13" font-weight="700" fill="#ffd9a8">0</text>
+      </svg>
+      <span class="logo-text">邯郸区号查询</span>
+    </a>
+    <nav class="main-nav" aria-label="主题导航">
+      <a href="/#overview">区号总览</a>
+      <a href="/#pick">常用速查</a>
+      <a href="/#feed">区县动态</a>
+      <a href="/#category">区县分类</a>
+      <a href="/#deep">拨打解析</a>
+      <a href="/#guide">核对流程</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comment">用户说法</a>
+      <a href="/#news">区号资讯</a>
+      <a href="/#submit">纠错投稿</a>
+    </nav>
+    <div class="search-box">
+      <input type="search" id="searchInput" placeholder="搜区县 / 邮编 / 号段" aria-label="站内查找区县、邮编或号段">
+      <button type="button" id="searchBtn">查找</button>
+      <div class="search-tip" id="searchTip" role="status" aria-live="polite"></div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="打开导航菜单" aria-expanded="false" aria-controls="drawer">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- 移动抽屉 -->
+<div class="drawer-mask" id="drawerMask" hidden></div>
+<aside class="drawer" id="drawer" aria-label="移动导航" aria-hidden="true">
+  <div class="drawer-head">
+    <b>邯郸区号查询 · 栏目</b>
+    <button class="drawer-close" id="drawerClose" aria-label="关闭导航菜单">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="/#overview">区号总览</a>
+    <a href="/#pick">常用速查</a>
+    <a href="/#feed">区县动态</a>
+    <a href="/#category">区县分类</a>
+    <a href="/#deep">拨打解析</a>
+    <a href="/#guide">核对流程</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comment">用户说法</a>
+    <a href="/#news">区号资讯</a>
+    <a href="/#submit">纠错投稿</a>
+  </nav>
+</aside>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="hero-eyebrow">0310 · 冀南 18 个区县</span>
+      <h1>邯郸区号查询</h1>
+      <p class="hero-desc">
+        汇总 <b>0310</b> 的覆盖范围与使用写法：邯山区、丛台区、复兴区、峰峰矿区，到武安市、涉县、磁县、大名县的固定电话号段与邮编对照，外地拨打、单位总机转接、寄件填单各场景怎么填，都在这里逐条核对。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#pick">查区县号段与邮编</a>
+        <a class="btn-ghost" href="/#guide">外地拨打写法</a>
+      </div>
+      <div class="hero-facts">
+        <div class="hero-fact"><b>0310</b><span>邯郸固定电话区号</span></div>
+        <div class="hero-fact"><b>18</b><span>区县条目对照</span></div>
+        <div class="hero-fact"><b>7 位</b><span>本地号码位数</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dial-card">
+        <span class="dial-badge">冀 D</span>
+        <div class="dial-top">
+          <span>AREA CODE</span>
+          <em>已核对</em>
+        </div>
+        <div class="dial-num">0310<small>区号</small></div>
+        <div class="dial-sub">邯郸市及所辖县（市、区）固定电话</div>
+        <div class="dial-rows">
+          <div class="dial-row"><span>外地拨打写法</span><b>0310-XXXXXXX</b></div>
+          <div class="dial-row"><span>本地拨打写法</span><b>直接拨 7 位号码</b></div>
+          <div class="dial-row"><span>邮编前三位</span><b>056000 起</b></div>
+          <div class="dial-row"><span>对照区县数</span><b>18 个</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 主体布局：三栏门户 -->
+<div class="wrap">
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="side side-left" aria-label="频道索引">
+      <div class="side-panel">
+        <div class="side-title">区县频道</div>
+        <nav class="channel-list" id="channelList">
+          <a href="/#overview">区号总览<em>0310</em></a>
+          <a href="/#pick">常用速查<em>18</em></a>
+          <a href="/#feed">区县动态<em>10</em></a>
+          <a href="/#category">区县分类<em>8</em></a>
+          <a href="/#deep">拨打解析<em>5 节</em></a>
+          <a href="/#guide">核对流程<em>6 步</em></a>
+          <a href="/#faq">常见问答<em>6</em></a>
+          <a href="/#comment">用户说法<em>16</em></a>
+          <a href="/#news">区号资讯<em>6</em></a>
+          <a href="/#submit">纠错投稿<em>开放</em></a>
+        </nav>
+      </div>
+      <div class="side-panel">
+        <div class="side-title">热门号段</div>
+        <ul class="hot-list">
+          <li><span class="hot-no">1</span><a href="/#pick">丛台区 0310-3 号段</a></li>
+          <li><span class="hot-no">2</span><a href="/#pick">邯山区 0310-6 号段</a></li>
+          <li><span class="hot-no">3</span><a href="/#pick">武安市 0310-5 号段</a></li>
+          <li><span class="hot-no">4</span><a href="/#pick">峰峰矿区 0310-5 号段</a></li>
+          <li><span class="hot-no">5</span><a href="/#pick">涉县 0310-3 号段</a></li>
+          <li><span class="hot-no">6</span><a href="/#pick">磁县 0310-2 号段</a></li>
+          <li><span class="hot-no">7</span><a href="/#pick">魏县 0310-3 号段</a></li>
+          <li><span class="hot-no">8</span><a href="/#pick">大名县 0310-6 号段</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main" id="mainContent">
+
+      <!-- 1 主题领域概览 -->
+      <section class="card-block overview" id="overview">
+        <div class="block-head">
+          <h2>0310 覆盖范围与号段构成<small>区号总览</small></h2>
+        </div>
+        <p>
+          邯郸固定电话使用 <span class="inline-tag">0310</span> 这一区号，覆盖邯郸市下辖的邯山区、丛台区、复兴区、峰峰矿区、肥乡区、永年区 6 个市辖区，以及武安市、涉县、磁县、临漳县、成安县、大名县、鸡泽县、邱县、广平县、馆陶县、魏县、曲周县 12 个县（市）。区县之间共用同一区号，不再细分二级区号，这一点与南方部分地市"一城多区号"的做法不同。
+        </p>
+        <p>
+          本地号码统一为 <b>7 位</b>。外地拨打需先拨 0310，再拨 7 位号码；本地互拨直接拨 7 位即可。手机号码不在区号体系内，无论归属邯郸还是外地，跨省拨打一律直接拨 11 位手机号，无需加拨 0310。这一点每年都有大量人搞错，尤其是给邯郸单位总机回拨时。
+        </p>
+        <p>
+          号段层面，邯郸固话首位数字大致对应不同区域：<b>3、5、6</b> 开头的号段在市区与武安、涉县、大名分布较多，<b>2、7、8</b> 开头的号段多在磁县、魏县、曲周等地。号段并非行政划分的严格依据，同一县内可能出现多个开头，判断归属时以运营商登记的装机地址为准，而不是只看前一位数字。
+        </p>
+        <p>
+          邮编与区号是两套编码。邯郸邮编以 <b>056000</b> 为市区起点，峰峰矿区为 056200，武安市为 056300，涉县为 056400，磁县为 056500。寄件填单时区号通常不是必填项，邮编才是分拣依据；把 0310 填进邮编栏是常见错误。
+        </p>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="card-block" id="pick">
+        <div class="block-head">
+          <h2>常用区县号段与邮编速查<small>精选条目</small></h2>
+          <a class="block-more" href="/#category">按区县筛选 →</a>
+        </div>
+        <p class="block-lead">以下 9 条按日常查询频次排列，含号段、邮编与常见使用场景，点击分类区可继续筛选。</p>
+        <div class="pick-grid">
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-congtai01/400/300" width="400" height="300" loading="lazy" alt="丛台区城区街道与办公楼外景">
+            <div class="pick-body">
+              <span class="pick-type">市辖区</span>
+              <h3 class="pick-title">丛台区 0310-3 号段</h3>
+              <p class="pick-note">市委、市政府及多数市直单位驻地，单位总机多为 3 开头 7 位号。给机关回拨时先确认是否需要总机转分机。</p>
+              <div class="pick-tags"><span>0310</span><span>056002</span><span>单位总机</span></div>
+              <div class="pick-meta"><span>查询热度 <b>9.6</b></span><span>11-08 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-hanshan02/400/300" width="400" height="300" loading="lazy" alt="邯山区商业街区与临街店铺">
+            <div class="pick-body">
+              <span class="pick-type">市辖区</span>
+              <h3 class="pick-title">邯山区 0310-6 号段</h3>
+              <p class="pick-note">商贸与物流企业集中，6 开头号段占比高。快递面单上的收件电话若为 7 位固话，多半落在这个区间。</p>
+              <div class="pick-tags"><span>0310</span><span>056001</span><span>物流企业</span></div>
+              <div class="pick-meta"><span>查询热度 <b>9.1</b></span><span>11-07 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-wuan03/400/300" width="400" height="300" loading="lazy" alt="武安市城区主干道与厂区远景">
+            <div class="pick-body">
+              <span class="pick-type t2">县级市</span>
+              <h3 class="pick-title">武安市 0310-5 号段</h3>
+              <p class="pick-note">钢铁与建材企业多，厂区固话常为 5 开头。外地供应商回拨时容易漏拨 0310，导致空号提示。</p>
+              <div class="pick-tags"><span>0310</span><span>056300</span><span>厂区固话</span></div>
+              <div class="pick-meta"><span>查询热度 <b>8.8</b></span><span>11-06 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-fengfeng04/400/300" width="400" height="300" loading="lazy" alt="峰峰矿区山体与矿区建筑">
+            <div class="pick-body">
+              <span class="pick-type">市辖区</span>
+              <h3 class="pick-title">峰峰矿区 0310-5 号段</h3>
+              <p class="pick-note">邮编 056200 与市区不同，寄件时容易写错。矿区固话与武安同为 5 开头，仅凭号段无法区分。</p>
+              <div class="pick-tags"><span>0310</span><span>056200</span><span>邮编易错</span></div>
+              <div class="pick-meta"><span>查询热度 <b>8.2</b></span><span>11-05 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-shexian05/400/300" width="400" height="300" loading="lazy" alt="涉县山区公路与村落">
+            <div class="pick-body">
+              <span class="pick-type t2">县</span>
+              <h3 class="pick-title">涉县 0310-3 号段</h3>
+              <p class="pick-note">地处太行山区，乡镇固话覆盖分散。拨打村级固定电话前，最好先确认是否已并入乡镇总机。</p>
+              <div class="pick-tags"><span>0310</span><span>056400</span><span>乡镇固话</span></div>
+              <div class="pick-meta"><span>查询热度 <b>7.9</b></span><span>11-04 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-cixian06/400/300" width="400" height="300" loading="lazy" alt="磁县县城街道与沿街门面">
+            <div class="pick-body">
+              <span class="pick-type t2">县</span>
+              <h3 class="pick-title">磁县 0310-2 号段</h3>
+              <p class="pick-note">2 开头号段在邯郸较少见，遇到 0310-2 开头的固话，可优先往磁县方向核对，但仍需装机地址确认。</p>
+              <div class="pick-tags"><span>0310</span><span>056500</span><span>号段少见</span></div>
+              <div class="pick-meta"><span>查询热度 <b>7.6</b></span><span>11-03 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-daming07/400/300" width="400" height="300" loading="lazy" alt="大名县老城街区与店铺招牌">
+            <div class="pick-body">
+              <span class="pick-type t2">县</span>
+              <h3 class="pick-title">大名县 0310-6 号段</h3>
+              <p class="pick-note">农业与食品加工企业较多，6 开头号段常见。外地客商拨打时区号后不需要加 0，直接连拨 7 位。</p>
+              <div class="pick-tags"><span>0310</span><span>056900</span><span>食品加工</span></div>
+              <div class="pick-meta"><span>查询热度 <b>7.3</b></span><span>11-02 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-weixian08/400/300" width="400" height="300" loading="lazy" alt="魏县县城集市与往来人群">
+            <div class="pick-body">
+              <span class="pick-type t2">县</span>
+              <h3 class="pick-title">魏县 0310-3 号段</h3>
+              <p class="pick-note">3 开头号段与丛台区重叠，来电显示上的 0310-3 不能直接判定为市区，需结合号段后几位再核对。</p>
+              <div class="pick-tags"><span>0310</span><span>056800</span><span>号段重叠</span></div>
+              <div class="pick-meta"><span>查询热度 <b>7.0</b></span><span>11-01 更新</span></div>
+            </div>
+          </article>
+
+          <article class="pick-card">
+            <img src="https://picsum.photos/seed/handan-guangping09/400/300" width="400" height="300" loading="lazy" alt="广平县工业园厂房与道路">
+            <div class="pick-body">
+              <span class="pick-type t3">县</span>
+              <h3 class="pick-title">广平县 0310-2 号段</h3>
+              <p class="pick-note">装备制造企业集中，2 开头号段与磁县部分重叠。企业官网留固话时建议同时标注区号，减少漏拨。</p>
+              <div class="pick-tags"><span>0310</span><span>057650</span><span>企业官网</span></div>
+              <div class="pick-meta"><span>查询热度 <b>6.7</b></span><span>10-30 更新</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3 最新更新动态 -->
+      <section class="card-block" id="feed">
+        <div class="block-head">
+          <h2>区县号段与邮编条目更新<small>10 条动态</small></h2>
+          <span class="block-more">截至 11-08</span>
+        </div>
+        <ul class="feed">
+          <li><time datetime="2026-11-08">11-08</time><div class="feed-txt"><b>丛台区 0310-3 号段补充 4 条机关总机</b><span>新增市政务服务中心、市人社局、市医保局、市档案馆 4 条总机号段，均标注是否需要转分机。</span></div></li>
+          <li><time datetime="2026-11-07">11-07</time><div class="feed-txt"><b>邯山区 6 开头号段核对完成</b><span>对照 2026 年 10 月运营商公开号段表，修正 2 条早期录入错误，涉及滏阳东路与陵西南大街两段。</span></div></li>
+          <li><time datetime="2026-11-06">11-06</time><div class="feed-txt"><b>武安市厂区固话升位说明补录</b><span>2026 年 9 月起部分厂区由 6 位升为 7 位，旧号码前需补"5"，企业通讯录未同步的较多。</span></div></li>
+          <li><time datetime="2026-11-05">11-05</time><div class="feed-txt"><b>峰峰矿区邮编条目新增 4 条</b><span>补充彭城镇、和村镇、大社镇、义井镇邮编，与 056200 主编码区分填写场景。</span></div></li>
+          <li><time datetime="2026-11-04">11-04</time><div class="feed-txt"><b>涉县乡镇固话归并情况更新</b><span>更乐镇、河南店镇部分村级固话已并入乡镇总机，单独号码拨打提示空号，条目内已注明。</span></div></li>
+          <li><time datetime="2026-11-03">11-03</time><div class="feed-txt"><b>外地拨打写法新增 3 个易错示例</b><span>覆盖"0310 前加 0""区号与手机号混拨""总机转分机漏拨 0"三类，附正确写法对照。</span></div></li>
+          <li><time datetime="2026-11-02">11-02</time><div class="feed-txt"><b>磁县 2 开头号段标注调整</b><span>原标注"仅磁县使用"改为"磁县与广平部分重叠"，依据运营商 10 月号段表。</span></div></li>
+          <li><time datetime="2026-10-31">10-31</time><div class="feed-txt"><b>大名县食品加工企业固话补录 6 条</b><span>含面粉、花生制品、肉制品三类企业，均标注区号与邮编，供外地客商核对。</span></div></li>
+          <li><time datetime="2026-10-30">10-30</time><div class="feed-txt"><b>魏县与丛台区号段重叠提示上线</b><span>0310-3 开头来电无法单凭区号判断属地，条目内新增"需看后 4 位"的核对说明。</span></div></li>
+          <li><time datetime="2026-10-29">10-29</time><div class="feed-txt"><b>广平县企业官网固话标注规范补充</b><span>建议企业官网固话写作"0310-XXXXXXX"，邮编单独列出，避免访客把区号填进邮编栏。</span></div></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="card-block" id="category">
+        <div class="block-head">
+          <h2>按区县类型查号段<small>8 个分类</small></h2>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#pick"><b>市辖区号段</b><span>邯山、丛台、复兴、峰峰、肥乡、永年</span><em>6 个区 · 38 条</em></a>
+          <a class="cat-item" href="/#pick"><b>县级市固话</b><span>武安市厂区与商贸固话</span><em>1 个市 · 12 条</em></a>
+          <a class="cat-item" href="/#pick"><b>西部山区县</b><span>涉县、磁县乡镇与村级固话</span><em>2 个县 · 9 条</em></a>
+          <a class="cat-item" href="/#pick"><b>东部平原县</b><span>大名、魏县、广平、馆陶、曲周</span><em>5 个县 · 21 条</em></a>
+          <a class="cat-item" href="/#feed"><b>邮编对照</b><span>056000 起各区县邮编编码</span><em>18 组</em></a>
+          <a class="cat-item" href="/#deep"><b>号段首位规则</b><span>2/3/5/6 开头对应区域差异</span><em>4 类</em></a>
+          <a class="cat-item" href="/#guide"><b>外地拨打写法</b><span>区号、手机号、分机号组合</span><em>6 步</em></a>
+          <a class="cat-item" href="/#faq"><b>来电归属判断</b><span>只看区号够不够、怎么补证</span><em>6 问</em></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="card-block deep" id="deep">
+        <div class="block-head">
+          <h2>0310 之后那 7 位：号段、重叠与判断<small>深度解析</small></h2>
+        </div>
+
+        <h3>一、区号统一之后，属地信息压到了后 7 位</h3>
+        <p>
+          邯郸 18 个区县共用 0310，意味着区号本身不再携带属地信息。判断一通固话来电来自丛台还是魏县，只能看后 7 位的前 1—2 位。这个结构在河北并不少见，但邯郸的特殊之处在于 <b>3 开头号段同时出现在丛台区、涉县和魏县</b>，单凭首位无法区分。
+        </p>
+        <p>
+          2026 年 10 月运营商公开号段表里，0310-3 号段在丛台区分配给机关与事业单位居多，在涉县多分配给乡镇政府与卫生院，在魏县则集中在县城商贸与农资门店。三地的共同点是"单位性质强"，因此来电显示 0310-3 时，更可能是公务或业务电话，而不是个人家庭电话。
+        </p>
+        <div class="quote">
+          判断口诀可以简化成一句：<b>3 开头看行业，5 开头看厂矿，6 开头看商贸，2 开头看县城</b>。口诀只用于缩小范围，不能替代装机地址核对。
+        </div>
+
+        <h3>二、四组号段首位的实际分布差异</h3>
+        <p>
+          把 2026 年 10 月的号段表按首位归并，可以看到不同数字的实际承载对象并不平均：
+        </p>
+        <table class="cmp">
+          <thead>
+            <tr><th>首位</th><th>主要分布区县</th><th>典型装机对象</th><th>易混淆点</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2</td><td>磁县、广平、曲周</td><td>县城门店、小型加工厂</td><td>磁县与广平部分重叠</td></tr>
+            <tr><td>3</td><td>丛台、涉县、魏县</td><td>机关、乡镇政府、农资门店</td><td>三地共用，需看后 4 位</td></tr>
+            <tr><td>5</td><td>武安、峰峰矿区</td><td>钢铁建材厂区、矿区单位</td><td>两地同为 5 开头</td></tr>
+            <tr><td>6</td><td>邯山、大名</td><td>商贸物流、食品加工</td><td>跨区县业务往来频繁</td></tr>
+          </tbody>
+        </table>
+        <p>
+          表中"易混淆点"一列是实际核对中出现频次最高的部分。以 5 开头为例，武安与峰峰矿区地理相邻、产业相近，两地企业互相留固话时经常只写 7 位，外地合作方回拨时若漏拨 0310，运营商会提示"号码不存在"，而不是"空号"，这两种提示的含义不同，前者多为位数不足，后者多为号段未启用。
+        </p>
+
+        <h3>三、升位与并机：两类历史遗留问题</h3>
+        <p>
+          武安市部分厂区在 2026 年 9 月完成 6 位升 7 位，旧号码前补"5"。企业通讯录、名片、官网未同步的比例不低。核对时如果遇到 0310-5 开头但只有 6 位的号码，先尝试在前补 5 再拨，比直接判定为空号更有效率。
+        </p>
+        <p>
+          涉县更乐镇、河南店镇的部分村级固话已并入乡镇总机，原独立号码停用。这类号码拨打后通常听到"您拨打的号码已停机"或直接转入总机语音。村一级的固话覆盖在 2024 年之后持续收缩，山区乡镇尤其明显，查号时把"是否已并机"作为前置条件，能省掉一轮无效拨打。
+        </p>
+
+        <h3>四、手机号不套区号，这条规则每年仍有人踩坑</h3>
+        <p>
+          手机号码归属地由号段前 7 位决定，与 0310 无关。给邯郸的手机号拨打电话，无论从北京、广州还是境外呼入，都是直接拨 11 位，前面加 0310 反而打不通。真正需要 0310 的只有固定电话，以及部分单位设置的"区号+总机+分机"组合。
+        </p>
+        <p>
+          单位总机的写法值得单独说。常见格式是 <b>0310-XXXXXXX 转 8XXX</b>，拨号时先拨区号与总机，听到语音提示后再拨分机号。部分总机要求分机号前加"0"或"#"，这类细节通常写在单位官网的联系方式页，查号时顺手看一眼能少走弯路。
+        </p>
+
+        <h3>五、把"可信"拆成三个可核对项</h3>
+        <p>
+          网上流传的号段归属说法质量参差。判断一条号段信息是否可信，可以拆成三个具体项逐一核对：
+        </p>
+        <ul>
+          <li><b>来源项</b>：是否标注运营商名称与号段表版本日期。只写"网友整理"而无版本日期的，可信度打折。</li>
+          <li><b>粒度项</b>：是否精确到区县，还是笼统写"邯郸地区"。粒度越粗，用于判断来电归属的误差越大。</li>
+          <li><b>时效项</b>：是否覆盖 2026 年 9 月武安升位之后的变化。早于该日期的号段表，5 开头部分可能已经过时。</li>
+        </ul>
+        <p>
+          三项里缺两项以上，这条信息就只能当线索，不能当结论。反过来，三项齐全的号段表，即便个别条目有误，整体可用性也明显更高。
+        </p>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="card-block" id="guide">
+        <div class="block-head">
+          <h2>核对一个邯郸固话该先看什么<small>6 步流程</small></h2>
+        </div>
+        <p class="block-lead">顺序按"先定性质、再定属地、最后定写法"排列，跳过任一步都可能白拨一次。</p>
+        <div class="steps">
+          <div class="step"><div><b>先确认是固话还是手机</b><p>11 位为手机，直接拨，不加区号；7—8 位为固话，才进入区号流程。位数是第一步，不是号码长相。</p></div></div>
+          <div class="step"><div><b>固话补足位数</b><p>邯郸固话为 7 位。遇到 6 位号码，先考虑是否为武安厂区旧号未升位，尝试前补 5；仍不通再查其他原因。</p></div></div>
+          <div class="step"><div><b>看首位缩小区县范围</b><p>3 开头往丛台、涉县、魏县查；5 开头往武安、峰峰查；6 开头往邯山、大名查；2 开头往磁县、广平、曲周查。</p></div></div>
+          <div class="step"><div><b>用邮编或地址交叉验证</b><p>区县定了之后，用 056000、056200、056300、056400、056500 等邮编前缀反查地址，比只看号段更稳。</p></div></div>
+          <div class="step"><div><b>判断是否单位总机</b><p>机关、医院、学校、厂区的固话多为总机，拨通后需转分机。分机号通常写在官网"联系我们"页。</p></div></div>
+          <div class="step"><div><b>最后决定拨打写法</b><p>外地拨打写 0310-XXXXXXX；本地写 7 位；境外呼入写 +86-310-XXXXXXX。三种写法不要混用。</p></div></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="card-block faq" id="faq">
+        <div class="block-head">
+          <h2>区号与拨打高频问答<small>6 问</small></h2>
+        </div>
+
+        <details>
+          <summary>邯郸的区号是 0310 还是 310？</summary>
+          <div class="ans">国内长途拨号时区号写作 <b>0310</b>，前导 0 是国内长途字冠，不能省略；从境外呼入时写作 <b>+86-310-XXXXXXX</b>，此时不加 0。两种写法对应两个场景，混用会导致拨号失败。来电显示通常呈现为"0310-XXXXXXX"或"0310XXXXXXX"。</div>
+        </details>
+
+        <details>
+          <summary>0310 开头的固话一定是邯郸市区吗？</summary>
+          <div class="ans">不一定。0310 覆盖邯郸全部 18 个区县，包括武安市、涉县、磁县、大名县等。市区（丛台、邯山、复兴、峰峰）与各县共用同一区号。要判断具体属地，需看后 7 位的首位数字，并结合装机地址核对。3 开头尤其容易误判，丛台、涉县、魏县都有。</div>
+        </details>
+
+        <details>
+          <summary>给邯郸的手机号打电话需要加 0310 吗？</summary>
+          <div class="ans">不需要，加了反而打不通。手机号码为 11 位，归属地由号段前 7 位决定，与固定电话区号体系无关。无论对方手机号归属邯郸还是其他城市，跨省拨打一律直接拨 11 位。需要 0310 的只有固定电话，以及"区号+总机+分机"的组合写法。</div>
+        </details>
+
+        <details>
+          <summary>武安市固话 6 位升 7 位后，旧号码怎么拨？</summary>
+          <div class="ans">2026 年 9 月起，武安市部分厂区固话由 6 位升为 7 位，旧号码前补"5"。如果手里是 6 位旧号，先在首位前加 5 组成 7 位，再按外地拨打写法加 0310。企业通讯录、名片、官网未同步的情况较多，直接按旧号拨会提示号码不存在，而非空号。</div>
+        </details>
+
+        <details>
+          <summary>峰峰矿区的邮编是 056200，填单时区号要一起写吗？</summary>
+          <div class="ans">寄件填单通常只需要邮编，区号不是必填项。峰峰矿区邮编为 056200，与市区 056000 不同，填错会延长分拣时间。把 0310 填进邮编栏是常见错误，两者编码体系不同。若收件方要求写电话，固话写作"0310-XXXXXXX"，与邮编分列两栏。</div>
+        </details>
+
+        <details>
+          <summary>境外给邯郸固话打电话，区号怎么写？</summary>
+          <div class="ans">写作 <b>+86-310-XXXXXXX</b>。国家码 86 之后接邯郸区号 310，此时不加前导 0，再拨 7 位本地号码。如果写成 +86-0310，多出的 0 会导致无法接通。部分境外运营商的拨号器会自动补 0，拨号前确认一下显示的国际号码格式更稳妥。</div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="card-block" id="comment">
+        <div class="block-head">
+          <h2>查号与拨打的真实说法<small>16 条</small></h2>
+        </div>
+        <div class="cmt-grid">
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar">邯</span><b>邯山老张</b><time datetime="2026-11-08">11-08</time></div><p>丛台区那个 3 开头号段确实对，上周给市医保局打电话，总机转 8 开头的分机，官网写的分机号前要加 0，第一次没加白等了两分钟。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c2">武</span><b>武安小刘</b><time datetime="2026-11-08">11-08</time></div><p>厂里固话升位这事拖了两个月才通知客户，名片全废了。前补 5 是对的，但有的老客户直接按 6 位拨，听到"号码不存在"还以为我们倒闭了。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c3">磁</span><b>磁县种蒜的</b><time datetime="2026-11-07">11-07</time></div><p>2 开头号码少是真的，我们这边门店基本都是 2 开头，外地打电话来经常问是不是打错了，说没见过邯郸 2 开头的号。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c4">涉</span><b>涉县跑山路的</b><time datetime="2026-11-07">11-07</time></div><p>更乐镇那边村里固话并到镇总机了，我上次打老号码一直提示停机，后来问村委会才知道。山区这块查号真得先问一句。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c5">峰</span><b>峰峰矿上退休的</b><time datetime="2026-11-06">11-06</time></div><p>056200 这个邮编记了三十年，比区号还熟。现在年轻人寄快递只看手机号，邮编填不填无所谓，但寄挂号信还是得写对。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar">大</span><b>大名府的面粉厂</b><time datetime="2026-11-06">11-06</time></div><p>外地客户老是把 0310 填到邮编栏里，收到件一看邮编写着 0310 开头，分拣得多绕一天。电话和邮编还是分开写比较好。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c2">魏</span><b>魏县卖农资</b><time datetime="2026-11-05">11-05</time></div><p>3 开头跟丛台区撞号这事挺烦，客户看我来电显示以为是市里单位，接起来语气都不一样，解释半天。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c3">广</span><b>广平做紧固件</b><time datetime="2026-11-05">11-05</time></div><p>企业官网留固话真该带区号，我们同行好几家只写 7 位，外地客户照着拨，少一位怎么都打不通，还以为是骗子。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c4">曲</span><b>曲周在石家庄</b><time datetime="2026-11-04">11-04</time></div><p>给老家固话打，我习惯直接拨 0310 加 7 位，从来没出过错。手机号倒是从来不区号，这俩别搞混就行。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c5">馆</span><b>馆陶陶艺学徒</b><time datetime="2026-11-03">11-03</time></div><p>工作室固话是 6 开头，跟邯山区那边一样。有次客户说你们邯山的吧，我说馆陶的，他愣了半天。区号统一之后确实不好分。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar">临</span><b>临漳的果农</b><time datetime="2026-11-02">11-02</time></div><p>境外亲戚打回来，写成 +86-0310 打不通，后来改成 +86-310 才通。这个 0 加不加，真得提前说清楚。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c2">成</span><b>成安跑运输</b><time datetime="2026-11-01">11-01</time></div><p>查号这事吧，光看号段只能猜个大概，最后还得问对方具体在哪。我这跑车的，地址比区号管用。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c3">肥</span><b>肥乡教书匠</b><time datetime="2026-10-31">10-31</time></div><p>学校总机转分机，分机号前加不加 # 每个单位不一样，官网写的和实际接的有时对不上，打两次就记住了。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c4">永</span><b>永年标准件</b><time datetime="2026-10-30">10-30</time></div><p>我们这边厂子多，5 开头 6 开头都有，客户问区号我就说 0310，具体哪开头我也记不住，反正能打通就行。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar c5">鸡</span><b>鸡泽辣椒酱</b><time datetime="2026-10-29">10-29</time></div><p>前几天接个电话显示 0310，以为是本地客户，结果是推销的。区号统一之后，来电显示真看不出啥，还得听内容。</p></div>
+
+          <div class="cmt"><div class="cmt-head"><span class="avatar">邱</span><b>邱县开小卖部</b><time datetime="2026-10-29">10-29</time></div><p>固话现在用得少了，店里那台一个月响不了几回。但寄快递、填表还得写，区号还是得知道。</p></div>
+
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="card-block" id="news">
+        <div class="block-head">
+          <h2>区号、号段与固话服务动态<small>6 条</small></h2>
+        </div>
+        <ul class="news">
+          <li>
+            <div class="news-top"><b>武安厂区固话升位满两个月，企业通讯录同步率不足六成</b><time datetime="2026-11-07">2026-11-07</time></div>
+            <p>2026 年 9 月完成升位的武安部分厂区，截至 11 月初仍有近四成企业未更新官网与名片上的固话位数，外地客户按旧号拨打时提示"号码不存在"的比例上升。</p>
+          </li>
+          <li>
+            <div class="news-top"><b>涉县三镇村级固话并入乡镇总机，原独立号码停用</b><time datetime="2026-11-05">2026-11-05</time></div>
+            <p>更乐镇、河南店镇、井店镇共 27 个村级固话点完成归并，原号码自 10 月下旬起陆续停用，拨打后转接乡镇总机，村委会已通过公告栏与微信群通知。</p>
+          </li>
+          <li>
+            <div class="news-top"><b>邯郸邮政分拣中心提醒：邮编栏填区号会延长分拣时间</b><time datetime="2026-11-03">2026-11-03</time></div>
+            <p>该中心 10 月处理的错填件中，邮编栏误填 0310 的占 7.4%，主要集中在大名、魏县发往外地的小件包裹，平均多耗 1 个工作日。</p>
+          </li>
+          <li>
+            <div class="news-top"><b>丛台区政务服务中心总机新增分机导航</b><time datetime="2026-11-01">2026-11-01</time></div>
+            <p>该中心 0310-3 开头总机自 11 月 1 日起启用语音导航，按业务分 1—6 号键转接，原 8 开头分机号仍可直拨，过渡期三个月。</p>
+          </li>
+          <li>
+            <div class="news-top"><b>磁县与广平号段重叠情况在运营商 10 月号段表中确认</b><time datetime="2026-10-30">2026-10-30</time></div>
+            <p>两地 2 开头号段在 2026 年 10 月版号段表中出现交叉分配，运营商建议判断属地时以装机地址为准，号段首位仅作参考。</p>
+          </li>
+          <li>
+            <div class="news-top"><b>峰峰矿区四镇邮编细分条目上线</b><time datetime="2026-10-29">2026-10-29</time></div>
+            <p>彭城、和村、大社、义井四镇在 056200 主编码下细分出独立投递段，寄件时填写镇名可缩短分拣路径，矿区邮政支局已同步更新。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="card-block" id="related">
+        <div class="block-head">
+          <h2>继续查的具体方向<small>标签索引</small></h2>
+        </div>
+        <div class="rec-tags">
+          <a href="/#pick">0310 丛台区机关总机 <i>38 条</i></a>
+          <a href="/#pick">武安厂区 6 位升 7 位 <i>12 条</i></a>
+          <a href="/#pick">峰峰矿区 056200 邮编 <i>4 条</i></a>
+          <a href="/#pick">涉县乡镇固话并机 <i>9 条</i></a>
+          <a href="/#deep">3 开头号段三地重叠 <i>解析</i></a>
+          <a href="/#guide">境外拨打 +86-310 写法 <i>指南</i></a>
+          <a href="/#faq">手机号加区号为什么打不通 <i>问答</i></a>
+          <a href="/#news">大名县食品企业固话补录 <i>6 条</i></a>
+        </div>
+      </section>
+
+      <!-- 11 补充板块：号段核对榜 -->
+      <section class="card-block" id="rank">
+        <div class="block-head">
+          <h2>本周号段核对频次榜<small>截至 11-08</small></h2>
+        </div>
+        <ul class="rank">
+          <li><span class="rank-no">1</span><div class="rank-name">丛台区 0310-3 号段<small>机关总机与分机转接</small></div><span class="rank-val">1,842 次</span></li>
+          <li><span class="rank-no">2</span><div class="rank-name">武安市 0310-5 号段<small>厂区升位后旧号核对</small></div><span class="rank-val">1,376 次</span></li>
+          <li><span class="rank-no">3</span><div class="rank-name">邯山区 0310-6 号段<small>物流企业固话</small></div><span class="rank-val">1,105 次</span></li>
+          <li><span class="rank-no">4</span><div class="rank-name">峰峰矿区 056200 邮编<small>寄件填单核对</small></div><span class="rank-val">926 次</span></li>
+          <li><span class="rank-no">5</span><div class="rank-name">涉县乡镇固话并机<small>村级号码停用查询</small></div><span class="rank-val">784 次</span></li>
+          <li><span class="rank-no">6</span><div class="rank-name">磁县 0310-2 号段<small>少见首位确认</small></div><span class="rank-val">613 次</span></li>
+          <li><span class="rank-no">7</span><div class="rank-name">大名县 0310-6 号段<small>食品加工企业固话</small></div><span class="rank-val">508 次</span></li>
+          <li><span class="rank-no">8</span><div class="rank-name">魏县 0310-3 号段<small>与丛台区重叠核对</small></div><span class="rank-val">447 次</span></li>
+        </ul>
+      </section>
+
+      <!-- 互动栏目：纠错投稿 -->
+      <section class="submit-panel" id="submit">
+        <h2>号段纠错与条目投稿</h2>
+        <p>遇到号段与区县对应不上、邮编有误、单位总机已停用的情况，可以提交区县、号码前四位与遇到的问题。核对后会更新到对应条目，并标注更新日期。投稿内容不含完整号码，仅记录号段。</p>
+        <form class="submit-form" id="submitForm">
+          <input type="text" name="county" placeholder="区县名称，如 武安市" aria-label="区县名称" required>
+          <input type="text" name="segment" placeholder="号码前四位，如 5XXX" aria-label="号码前四位" required>
+          <select name="issue" aria-label="问题类型">
+            <option value="号段归属有误">号段归属有误</option>
+            <option value="邮编填写错误">邮编填写错误</option>
+            <option value="总机已停用">总机已停用</option>
+            <option value="升位信息未同步">升位信息未同步</option>
+          </select>
+          <button type="submit">提交纠错</button>
+        </form>
+        <p class="submit-msg" id="submitMsg">已收到，核对后会在 3 个工作日内更新条目。</p>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="side side-right" aria-label="辅助信息">
+      <div class="side-panel">
+        <div class="side-title">热门查询</div>
+        <ul class="hot-list">
+          <li><span class="hot-no">1</span><a href="/#pick">丛台区机关总机怎么转分机</a></li>
+          <li><span class="hot-no">2</span><a href="/#pick">武安固话升位旧号怎么拨</a></li>
+          <li><span class="hot-no">3</span><a href="/#pick">峰峰矿区邮编 056200</a></li>
+          <li><span class="hot-no">4</span><a href="/#faq">手机号加 0310 为什么不通</a></li>
+          <li><span class="hot-no">5</span><a href="/#deep">3 开头号段怎么分丛台和魏县</a></li>
+          <li><span class="hot-no">6</span><a href="/#guide">境外拨打 +86-310 写法</a></li>
+          <li><span class="hot-no">7</span><a href="/#pick">磁县 2 开头号段少见原因</a></li>
+          <li><span class="hot-no">8</span><a href="/#pick">大名县食品企业固话</a></li>
+        </ul>
+      </div>
+      <div class="side-panel">
+        <div class="side-title">条目更新</div>
+        <ul class="upd-list">
+          <li><span>丛台区 3 号段补 4 条</span><time datetime="2026-11-08">11-08</time></li>
+          <li><span>邯山区 6 号段核对</span><time datetime="2026-11-07">11-07</time></li>
+          <li><span>武安升位说明补录</span><time datetime="2026-11-06">11-06</time></li>
+          <li><span>峰峰邮编新增 4 条</span><time datetime="2026-11-05">11-05</time></li>
+          <li><span>涉县并机情况更新</span><time datetime="2026-11-04">11-04</time></li>
+          <li><span>外地拨打示例 +3</span><time datetime="2026-11-03">11-03</time></li>
+        </ul>
+        <div class="side-note">
+          区号核对以运营商号段表与装机地址为准。号段首位只作范围参考，<b>0310</b> 覆盖全部 18 个区县。
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="side-title">邮编速览</div>
+        <ul class="upd-list">
+          <li><span>市区（邯山/丛台/复兴）</span><time>056000</time></li>
+          <li><span>峰峰矿区</span><time>056200</time></li>
+          <li><span>武安市</span><time>056300</time></li>
+          <li><span>涉县</span><time>056400</time></li>
+          <li><span>磁县</span><time>056500</time></li>
+          <li><span>大名县</span><time>056900</time></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#2f6fa8"/>
+            <path d="M18 22c0-3 2-5 5-5h4c1 0 2 1 2 2l1 6c0 1 0 2-1 3l-3 2c2 5 5 8 10 10l2-3c1-1 2-1 3-1l6 1c1 0 2 1 2 2v4c0 3-2 5-5 5C30 48 18 36 18 22z" fill="#ffffff"/>
+          </svg>
+          <b>邯郸区号查询</b>
+        </div>
+        <p class="footer-desc">
+          条目覆盖 2026 年 9 月武安升位之后至 11 月 8 日的号段与邮编变化，含区县对照、单位总机转接写法、乡镇并机记录与境外拨打格式四类内容，按周核对运营商号段表。
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>区县速查</h4>
+          <a href="/#pick">丛台区 0310-3</a>
+          <a href="/#pick">邯山区 0310-6</a>
+          <a href="/#pick">武安市 0310-5</a>
+          <a href="/#pick">峰峰矿区 056200</a>
+          <a href="/#pick">涉县乡镇固话</a>
+        </div>
+        <div class="footer-col">
+          <h4>拨打与邮编</h4>
+          <a href="/#guide">外地拨打写法</a>
+          <a href="/#guide">单位总机转分机</a>
+          <a href="/#faq">手机号与区号</a>
+          <a href="/#deep">号段首位规则</a>
+          <a href="/#news">邮编分拣提醒</a>
+        </div>
+        <div class="footer-col">
+          <h4>互动与更新</h4>
+          <a href="/#submit">号段纠错投稿</a>
+          <a href="/#comment">用户说法</a>
+          <a href="/#feed">条目更新动态</a>
+          <a href="/#rank">核对频次榜</a>
+          <a href="/#faq">常见问答</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>条目含示例号段与邮编对照，实际拨打以运营商登记与装机地址为准。<b>最近更新：2026-11-08</b>，对应丛台区 3 号段补充 4 条机关总机。</span>
+      <span>© 2026 邯郸区号查询 · 内容聚合示例页</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var drawer = document.getElementById('drawer');
+  var mask = document.getElementById('drawerMask');
+  var burger = document.getElementById('hamburger');
+  var drawerClose = document.getElementById('drawerClose');
+  var toTop = document.getElementById('toTop');
+
+  function openDrawer(){
+    drawer.classList.add('show');
+    mask.hidden = false;
+    requestAnimationFrame(function(){ mask.classList.add('show'); });
+    drawer.setAttribute('aria-hidden','false');
+    burger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+    drawerClose.focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove('show');
+    mask.classList.remove('show');
+    drawer.setAttribute('aria-hidden','true');
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+    setTimeout(function(){ mask.hidden = true; }, 220);
+  }
+  burger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  mask.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('show')) closeDrawer();
+  });
+
+  // 回到顶部
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 左侧频道高亮
+  var sections = ['overview','pick','feed','category','deep','guide','faq','comment','news','submit'];
+  var links = document.querySelectorAll('#channelList a');
+  function highlight(){
+    var pos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el && el.offsetTop <= pos) current = id;
+    });
+    links.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '/#' + current);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+
+  // 站内查找：区县 / 邮编 / 号段
+  var data = [
+    {k:'丛台区 0310-3 号段 056002 机关总机', t:'丛台区', d:'0310-3 开头，邮编 056002，机关总机需转分机'},
+    {k:'邯山区 0310-6 号段 056001 物流', t:'邯山区', d:'0310-6 开头，邮编 056001，商贸物流企业集中'},
+    {k:'武安市 0310-5 号段 056300 厂区升位', t:'武安市', d:'0310-5 开头，邮编 056300，2026 年 9 月部分厂区升 7 位'},
+    {k:'峰峰矿区 0310-5 号段 056200 邮编', t:'峰峰矿区', d:'0310-5 开头，邮编 056200，与市区邮编不同'},
+    {k:'涉县 0310-3 号段 056400 乡镇并机', t:'涉县', d:'0310-3 开头，邮编 056400，部分村级固话并入乡镇总机'},
+    {k:'磁县 0310-2 号段 056500', t:'磁县', d:'0310-2 开头，邮编 056500，2 开头号段较少见'},
+    {k:'大名县 0310-6 号段 056900 食品加工', t:'大名县', d:'0310-6 开头，邮编 056900，食品加工企业较多'},
+    {k:'魏县 0310-3 号段 056800 与丛台重叠', t:'魏县', d:'0310-3 开头，邮编 056800，与丛台区号段重叠'},
+    {k:'广平县 0310-2 号段 057650 装备制造', t:'广平县', d:'0310-2 开头，邮编 057650，与磁县部分重叠'},
+    {k:'复兴区 0310-4 号段 056003', t:'复兴区', d:'0310-4 开头，邮编 056003，市区西部工业片区'},
+    {k:'肥乡区 0310-8 号段 057550', t:'肥乡区', d:'0310-8 开头，邮编 057550'},
+    {k:'永年区 0310-6 号段 057150 标准件', t:'永年区', d:'0310-6 开头，邮编 057150，标准件企业集中'},
+    {k:'临漳县 0310-7 号段 056600', t:'临漳县', d:'0310-7 开头，邮编 056600'},
+    {k:'成安县 0310-7 号段 056700', t:'成安县', d:'0310-7 开头，邮编 056700'},
+    {k:'鸡泽县 0310-7 号段 057350 辣椒', t:'鸡泽县', d:'0310-7 开头，邮编 057350，辣椒制品企业较多'},
+    {k:'邱县 0310-8 号段 057450', t:'邱县', d:'0310-8 开头，邮编 057450'},
+    {k:'馆陶县 0310-2 号段 057750 陶艺', t:'馆陶县', d:'0310-2 开头，邮编 057750，陶艺工作室较多'},
+    {k:'曲周县 0310-8 号段 057250', t:'曲周县', d:'0310-8 开头，邮编 057250'}
+  ];
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var tip = document.getElementById('searchTip');
+
+  function doSearch(){
+    var q = (input.value || '').trim().toLowerCase();
+    if(!q){
+      tip.innerHTML = '输入区县名、邮编或号段首位，如「武安」「056300」「5」。';
+      tip.classList.add('show');
+      return;
+    }
+    var hits = data.filter(function(item){
+      return item.k.toLowerCase().indexOf(q) > -1;
+    }).slice(0,5);
+    if(hits.length === 0){
+      tip.innerHTML = '没有找到匹配的区县或号段，可换用「区县名」「056 开头邮编」或「号段首位数字」再试。';
+    } else {
+      tip.innerHTML = hits.map(function(h){
+        return '<div style="padding:4px 0;border-bottom:1px dashed #eef2f7"><strong>' + h.t + '</strong> · ' + h.d + '</div>';
+      }).join('');
+    }
+    tip.classList.add('show');
+  }
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  document.addEventListener('click', function(e){
+    if(!tip.contains(e.target) && e.target !== input && e.target !== btn){ tip.classList.remove('show'); }
+  });
+
+  // 投稿表单
+  var form = document.getElementById('submitForm');
+  var msg = document.getElementById('submitMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.classList.add('show');
+    form.reset();
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"邯郸区号查询",
+  "description":"提供0310区号覆盖范围、邯郸各区县电话区号与邮编对照、外地拨打写法、常见误拨原因及号码归属判断方法。",
+  "inLanguage":"zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"邯郸的区号是 0310 还是 310？","acceptedAnswer":{"@type":"Answer","text":"国内长途拨号时区号写作0310，前导0是国内长途字冠，不能省略；从境外呼入时写作+86-310-XXXXXXX，此时不加0。"}},
+    {"@type":"Question","name":"0310 开头的固话一定是邯郸市区吗？","acceptedAnswer":{"@type":"Answer","text":"不一定。0310覆盖邯郸全部18个区县，包括武安市、涉县、磁县、大名县等。要判断具体属地需看后7位首位数字并结合装机地址核对。"}},
+    {"@type":"Question","name":"给邯郸的手机号打电话需要加 0310 吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。手机号码为11位，归属地由号段前7位决定，与固定电话区号体系无关，跨省拨打一律直接拨11位。"}},
+    {"@type":"Question","name":"武安市固话 6 位升 7 位后，旧号码怎么拨？","acceptedAnswer":{"@type":"Answer","text":"2026年9月起武安市部分厂区固话由6位升为7位，旧号码前补5。组成7位后再按外地拨打写法加0310。"}},
+    {"@type":"Question","name":"峰峰矿区的邮编是 056200，填单时区号要一起写吗？","acceptedAnswer":{"@type":"Answer","text":"寄件填单通常只需要邮编，区号不是必填项。峰峰矿区邮编为056200，与市区056000不同，把0310填进邮编栏是常见错误。"}},
+    {"@type":"Question","name":"境外给邯郸固话打电话，区号怎么写？","acceptedAnswer":{"@type":"Answer","text":"写作+86-310-XXXXXXX。国家码86之后接邯郸区号310，此时不加前导0，再拨7位本地号码。"}}
+  ]
+}
+</script>
+
+</body>
+                </html>
