@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>akt大佬 - 作品推荐与动态追踪</title>
+  <meta name="description" content="akt大佬 是一个专注于 akt 创作者作品与动态的内容聚合页，汇集《夜航星图》《废土信使》等原创作品、更新日志、深度解析与用户评论，适合关注 akt 创作风格的读者浏览。">
+  <meta name="keywords" content="akt大佬">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1e3c'/%3E%3Cpath d='M8 10h16v3H8zM8 16h12v3H8zM8 22h8v3H8z' fill='%237c9cff'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #2b3a7a;
+      --brand-light: #4e6bcf;
+      --brand-dark: #151c3d;
+      --bg: #f4f6fc;
+      --surface: #ffffff;
+      --text-1: #0e1424;
+      --text-2: #3b4560;
+      --text-3: #7a849f;
+      --line: #dce0ea;
+      --radius-card: 16px;
+      --radius-btn: 30px;
+      --radius-tag: 6px;
+      --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 12px 24px rgba(43, 58, 122, 0.12);
+      --font-main: 'Inter', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-padding-top: 120px;
+    }
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul, ol {
+      list-style: none;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 吸顶公告条 */
+    .announcement-bar {
+      background: var(--brand-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      line-height: 1.3;
+    }
+    .announcement-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 32px;
+    }
+    .announcement-bar .brand-mark {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #c0cdf5;
+      margin-right: 8px;
+    }
+    .announcement-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+    }
+    .announcement-item .date {
+      color: #9bb0f0;
+      font-variant-numeric: tabular-nums;
+    }
+    .announcement-item .new-tag {
+      background: #f5b342;
+      color: #1a1e3c;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 36px;
+      z-index: 99;
+      padding: 10px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo-svg {
+      width: 36px;
+      height: 36px;
+    }
+    .brand-text {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: -0.3px;
+    }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px 20px;
+      flex-wrap: wrap;
+    }
+    .main-nav a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-2);
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .main-nav a:hover {
+      color: var(--brand);
+      border-bottom-color: var(--brand-light);
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 4px 6px 4px 16px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box:focus-within {
+      border-color: var(--brand-light);
+      box-shadow: 0 0 0 3px rgba(78, 107, 207, 0.15);
+    }
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      padding: 6px 0;
+      width: 140px;
+      background: transparent;
+      color: var(--text-1);
+    }
+    .search-box input::placeholder {
+      color: var(--text-3);
+    }
+    .search-box button {
+      background: var(--brand-light);
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 6px 14px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .search-box button:hover {
+      background: var(--brand);
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-2);
+    }
+    .mobile-nav-overlay {
+      display: none;
+    }
+
+    /* 首屏 */
+    .hero-section {
+      padding: 48px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-light);
+      margin-bottom: 12px;
+    }
+    .hero-section h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--brand-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 520px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--brand);
+      border: 1.5px solid var(--brand-light);
+      border-radius: var(--radius-btn);
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-outline:hover {
+      background: rgba(78, 107, 207, 0.08);
+      border-color: var(--brand);
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+    }
+    .hero-svg {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      filter: drop-shadow(0 16px 32px rgba(43, 58, 122, 0.12));
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-svg { animation: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+
+    /* 主内容区三栏 */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      padding: 40px 0 60px;
+    }
+    .channel-sidebar {
+      position: sticky;
+      top: 128px;
+      align-self: start;
+    }
+    .channel-sidebar h3 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 16px;
+      padding-left: 8px;
+    }
+    .channel-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .channel-nav a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-2);
+      transition: background 0.2s, color 0.2s;
+    }
+    .channel-nav a:hover {
+      background: #e9edf9;
+      color: var(--brand);
+    }
+    .channel-nav a.active {
+      background: #e0e7fa;
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    .main-content {
+      min-width: 0;
+    }
+
+    .aux-sidebar {
+      position: sticky;
+      top: 128px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .aux-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .aux-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hot-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed #eef0f5;
+    }
+    .hot-list li:last-child {
+      border-bottom: none;
+    }
+    .hot-list .rank {
+      font-weight: 700;
+      color: var(--brand-light);
+      min-width: 20px;
+      font-size: 0.8rem;
+    }
+    .hot-list .title {
+      flex: 1;
+      color: var(--text-2);
+      transition: color 0.2s;
+    }
+    .hot-list .title:hover {
+      color: var(--brand);
+    }
+    .update-timeline {
+      font-size: 0.85rem;
+    }
+    .update-timeline li {
+      padding: 6px 0;
+      display: flex;
+      gap: 8px;
+      color: var(--text-2);
+    }
+    .update-timeline .date {
+      color: var(--text-3);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 板块通用 */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 120px;
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      letter-spacing: -0.01em;
+    }
+    .section-header .more-link {
+      font-size: 0.85rem;
+      color: var(--brand-light);
+      font-weight: 500;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .content-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #d9def0;
+    }
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-light);
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.55;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--text-3);
+      flex-wrap: wrap;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .tag {
+      background: #eef1f9;
+      border-radius: var(--radius-tag);
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-2);
+    }
+    .hot-count {
+      color: #d97706;
+      font-weight: 600;
+    }
+
+    /* 紧凑列表 */
+    .compact-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .compact-list li:last-child {
+      border-bottom: none;
+    }
+    .compact-list .item-name {
+      font-weight: 600;
+      color: var(--text-1);
+      font-size: 0.95rem;
+      min-width: 120px;
+    }
+    .compact-list .item-desc {
+      font-size: 0.85rem;
+      color: var(--text-2);
+      flex: 1;
+    }
+    .compact-list .item-date {
+      font-size: 0.75rem;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+
+    /* 分类网格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-2);
+      box-shadow: var(--shadow-default);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    .category-item:hover {
+      background: #f0f4ff;
+      color: var(--brand);
+      box-shadow: var(--shadow-hover);
+      border-color: #d0dbf5;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-default);
+    }
+    .deep-dive h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 24px 0 10px;
+    }
+    .deep-dive h3:first-child {
+      margin-top: 0;
+    }
+    .deep-dive p {
+      margin-bottom: 14px;
+      color: var(--text-2);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .deep-dive ul {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 16px;
+      color: var(--text-2);
+      font-size: 0.95rem;
+    }
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+    .insight-box {
+      background: #f0f4ff;
+      border-left: 4px solid var(--brand-light);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      color: var(--text-2);
+    }
+
+    /* 指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-default);
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+    .step-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+    }
+
+    /* FAQ */
+    .faq-list details {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow-default);
+      cursor: pointer;
+    }
+    .faq-list summary {
+      font-weight: 600;
+      color: var(--text-1);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-list summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--brand-light);
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+    .faq-list .faq-answer {
+      margin-top: 10px;
+      color: var(--text-2);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow-default);
+      font-size: 0.85rem;
+    }
+    .comment-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+    .comment-name {
+      font-weight: 600;
+      color: var(--brand);
+    }
+    .comment-time {
+      color: var(--text-3);
+      font-size: 0.7rem;
+    }
+    .comment-text {
+      color: var(--text-2);
+      line-height: 1.55;
+    }
+
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .news-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+    .news-body {
+      padding: 16px;
+    }
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--text-3);
+      margin-bottom: 4px;
+    }
+    .news-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--text-1);
+    }
+    .news-summary {
+      font-size: 0.85rem;
+      color: var(--text-2);
+    }
+
+    /* 相关推荐标签 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag-index a {
+      background: var(--surface);
+      border-radius: var(--radius-btn);
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-2);
+      box-shadow: var(--shadow-default);
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .tag-index a:hover {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: var(--brand-dark);
+      color: #cbd2e8;
+      padding: 48px 0 32px;
+      margin-top: 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand .brand-text {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #9ba8cc;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: #9ba8cc;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid #2d3766;
+      padding-top: 24px;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: #7a86b0;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(43, 58, 122, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--brand-dark);
+    }
+
+    /* 搜索无结果 */
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-3);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-layout {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-sidebar {
+        display: none;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-section h1 {
+        font-size: 2.6rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 740px) {
+      html {
+        scroll-padding-top: 100px;
+      }
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .aux-sidebar {
+        position: static;
+        margin-top: 12px;
+      }
+      .site-header .container {
+        justify-content: space-between;
+      }
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 16px 24px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        gap: 4px;
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .search-box input {
+        width: 100px;
+      }
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .mobile-nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 98;
+      }
+      .mobile-nav-overlay.active {
+        display: block;
+      }
+      .site-header {
+        top: 32px;
+      }
+      .announcement-bar .container {
+        gap: 8px 16px;
+        font-size: 0.75rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+      .hero-section h1 {
+        font-size: 1.9rem;
+      }
+      .deep-dive {
+        padding: 20px 18px;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announcement-bar">
+  <div class="container">
+    <span class="brand-mark">akt大佬</span>
+    <span class="announcement-item"><span class="date">2026-11-08</span>《夜航星图》第14章更新</span>
+    <span class="announcement-item"><span class="date">2026-11-06</span>《废土信使》设定集上线<span class="new-tag">新</span></span>
+    <span class="announcement-item"><span class="date">2026-11-04</span>akt 直播问答回放已上传</span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="container">
+    <div class="brand-area">
+      <svg class="brand-logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="36" height="36" rx="10" fill="#2b3a7a"/>
+        <path d="M9 11h18v3.5H9zM9 17.5h14v3.5H9zM9 24h10v3.5H9z" fill="#7c9cff"/>
+      </svg>
+      <span class="brand-text">akt大佬</span>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#overview">领域概览</a>
+      <a href="#featured">精选推荐</a>
+      <a href="#updates">最新更新</a>
+      <a href="#categories">分类入口</a>
+      <a href="#deep-dive">深度解析</a>
+      <a href="#guide">体验指南</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索作品或标签…" aria-label="搜索作品或标签">
+        <button id="searchBtn" aria-label="执行搜索">搜索</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- 首屏 -->
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">akt 创作追踪站</div>
+      <h1>akt大佬</h1>
+      <p class="hero-desc">
+        汇集 akt 的原创连载《夜航星图》《废土信使》、短篇《灰域来信》及设定集、直播切片与读者讨论。每一条更新附带章节摘要与读者反馈摘要，方便快速判断是否值得跟进。
+      </p>
+      <div class="hero-cta">
+        <a href="#featured" class="btn-primary">浏览作品</a>
+        <a href="#updates" class="btn-outline">查看更新</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-svg" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="280" height="200" rx="16" fill="#e8edfc"/>
+        <rect x="60" y="60" width="240" height="14" rx="7" fill="#c0cdf5"/>
+        <rect x="60" y="86" width="180" height="10" rx="5" fill="#d9def0"/>
+        <rect x="60" y="106" width="220" height="8" rx="4" fill="#e4e8f5"/>
+        <rect x="60" y="122" width="160" height="8" rx="4" fill="#e4e8f5"/>
+        <rect x="60" y="150" width="100" height="60" rx="10" fill="#4e6bcf" opacity="0.15"/>
+        <rect x="176" y="150" width="100" height="60" rx="10" fill="#4e6bcf" opacity="0.1"/>
+        <circle cx="390" cy="80" r="36" fill="#2b3a7a" opacity="0.08"/>
+        <circle cx="410" cy="200" r="48" fill="#2b3a7a" opacity="0.05"/>
+        <path d="M340 260 L380 220 L420 260" stroke="#7c9cff" stroke-width="4" stroke-linecap="round"/>
+        <rect x="340" y="270" width="100" height="8" rx="4" fill="#c0cdf5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主内容区：三栏 -->
+<div class="container main-layout">
+  <!-- 左侧频道索引 -->
+  <aside class="channel-sidebar">
+    <h3>频道</h3>
+    <nav class="channel-nav" id="channelNav">
+      <a href="#overview" class="active">领域概览</a>
+      <a href="#featured">精选作品</a>
+      <a href="#updates">更新日志</a>
+      <a href="#categories">分类索引</a>
+      <a href="#deep-dive">深度解析</a>
+      <a href="#guide">体验指南</a>
+      <a href="#faq">常见问答</a>
+      <a href="#comments">读者评论</a>
+      <a href="#news">相关资讯</a>
+      <a href="#related-tags">相关推荐</a>
+      <a href="#ranking">热门榜单</a>
+    </nav>
+  </aside>
+
+  <!-- 中间主内容 -->
+  <main class="main-content">
+    <!-- 领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-header">
+        <h2>akt 创作领域概览</h2>
+      </div>
+      <div class="deep-dive" style="padding: 24px 28px;">
+        <p>
+          akt 的创作以科幻悬疑连载为核心，同时涉足短篇、设定集和直播互动。主要连载包括《夜航星图》《废土信使》和《灰域来信》，三部作品共享一套“灰域”世界观，但时间线和叙事视角各自独立。《夜航星图》围绕深空信号解码展开，目前更新至第14章，单章平均阅读量约 3.2 万；《废土信使》侧重地表信使的日常与冲突，篇幅更短，适合碎片时间阅读；《灰域来信》则是书信体短篇集，每篇 3000—5000 字，独立成章。
+        </p>
+        <p>
+          读者讨论集中在三个方向：世界观的细节考据、角色动机的合理性、以及更新节奏的预期管理。2026 年 10 月以来，akt 在直播中透露《夜航星图》第二部大纲已完成，但具体上线时间未定。同期发布的《废土信使》设定集收录了 12 张场景概念图和 8 页角色小传，其中 3 页内容为首次公开。短篇《灰域来信》第七封“致失联者”在读者社群中被反复引用，主要因为结尾留白处理。
+        </p>
+      </div>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-header">
+        <h2>精选作品推荐</h2>
+        <a href="#featured" class="more-link">全部作品 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-starmap/400/300" alt="《夜航星图》深空信号概念图" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">长篇连载</div>
+            <h3 class="card-title">《夜航星图》</h3>
+            <div class="card-tags"><span class="tag">科幻</span><span class="tag">悬疑</span><span class="tag">深空</span></div>
+            <p class="card-desc">深空监听站接收到重复脉冲信号，解码过程牵出三十年前的失踪船员名单。第14章揭示信号源来自已废弃的“远望号”中继站。</p>
+            <div class="card-meta"><span class="hot-count">🔥 3.2万阅读</span><span>11月8日更新</span></div>
+          </div>
+        </article>
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-wasteland/400/300" alt="《废土信使》地表废墟场景" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">中篇连载</div>
+            <h3 class="card-title">《废土信使》</h3>
+            <div class="card-tags"><span class="tag">末世</span><span class="tag">公路</span><span class="tag">群像</span></div>
+            <p class="card-desc">信使小队穿越三号辐射区运送加密包裹，途中遭遇沙暴和劫掠者。第9章补完了队长“老刀”的背部伤疤来源。</p>
+            <div class="card-meta"><span class="hot-count">🔥 2.1万阅读</span><span>11月5日更新</span></div>
+          </div>
+        </article>
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-letter/400/300" alt="《灰域来信》手写信件与旧地图" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">短篇集</div>
+            <h3 class="card-title">《灰域来信》</h3>
+            <div class="card-tags"><span class="tag">书信体</span><span class="tag">独立短篇</span><span class="tag">世界观补完</span></div>
+            <p class="card-desc">七封来自灰域不同定居点的信件，每封对应一个时间节点。第七封“致失联者”以未寄出的方式收尾，补充了主线未提及的北境撤离路线。</p>
+            <div class="card-meta"><span class="hot-count">🔥 1.8万阅读</span><span>10月28日完结</span></div>
+          </div>
+        </article>
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-artbook/400/300" alt="《废土信使》设定集封面与内页" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">设定集</div>
+            <h3 class="card-title">《废土信使》设定集</h3>
+            <div class="card-tags"><span class="tag">概念图</span><span class="tag">角色小传</span><span class="tag">未公开内容</span></div>
+            <p class="card-desc">收录 12 张场景概念图、8 页角色小传，其中 3 页为首次公开。附赠三号辐射区地图折页，标注了信使小队的常规路线和备用补给点。</p>
+            <div class="card-meta"><span class="hot-count">🔥 1.4万阅读</span><span>11月6日上线</span></div>
+          </div>
+        </article>
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-live/400/300" alt="akt直播问答回放画面" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">直播回放</div>
+            <h3 class="card-title">akt 直播问答 11/05</h3>
+            <div class="card-tags"><span class="tag">创作谈</span><span class="tag">答疑</span><span class="tag">第二部预告</span></div>
+            <p class="card-desc">回放时长 1 小时 42 分，覆盖《夜航星图》第二部大纲进度、角色“林映”是否回归、以及设定集加印计划。文字版摘要已整理为 8 个问答。</p>
+            <div class="card-meta"><span class="hot-count">🔥 9800 播放</span><span>11月5日直播</span></div>
+          </div>
+        </article>
+        <article class="content-card">
+          <img class="card-img" src="https://picsum.photos/seed/akt-radio/400/300" alt="《远望号电台》音频节目封面" width="400" height="300" loading="lazy">
+          <div class="card-body">
+            <div class="card-type">音频节目</div>
+            <h3 class="card-title">《远望号电台》</h3>
+            <div class="card-tags"><span class="tag">剧情广播</span><span class="tag">角色配音</span><span class="tag">番外</span></div>
+            <p class="card-desc">以《夜航星图》中“远望号”中继站为背景的广播剧，每期 12—15 分钟。第三期“监听日志”由 akt 本人配音，补充了信号解码的原始录音片段。</p>
+            <div class="card-meta"><span class="hot-count">🔥 7600 播放</span><span>11月1日更新</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-header">
+        <h2>最新更新与动态</h2>
+      </div>
+      <ul class="compact-list">
+        <li><span class="item-name">《夜航星图》第14章</span><span class="item-desc">信号源锁定为“远望号”中继站，林映在日志中发现了与三十年前船员名单的交叉点。</span><span class="item-date">2026-11-08</span></li>
+        <li><span class="item-name">《废土信使》第9章</span><span class="item-desc">老刀在沙暴中暴露背部伤疤来源——三号辐射区第一次运送任务时被劫掠者留下的灼伤。</span><span class="item-date">2026-11-05</span></li>
+        <li><span class="item-name">设定集加印公告</span><span class="item-desc">首印 2000 册三天内售罄，加印 1500 册预计 11月20日发货，包含修正后的三号辐射区地图。</span><span class="item-date">2026-11-04</span></li>
+        <li><span class="item-name">直播问答回放</span><span class="item-desc">akt 确认《夜航星图》第二部大纲已完成 60%，但上线时间需等第一部修订版发布后再定。</span><span class="item-date">2026-11-03</span></li>
+        <li><span class="item-name">《远望号电台》第三期</span><span class="item-desc">新增“监听日志”片段，公开了第14章信号原始录音的 30 秒试听，包含背景低频噪音。</span><span class="item-date">2026-11-01</span></li>
+        <li><span class="item-name">《灰域来信》第七封</span><span class="item-desc">“致失联者”正式收尾，结尾未寄出的信件补充了北境撤离路线，与主线第3章形成时间闭环。</span><span class="item-date">2026-10-28</span></li>
+        <li><span class="item-name">读者考据合集发布</span><span class="item-desc">由读者社群整理的《夜航星图》时间线 v2.0 发布，修正了第7章与第11章之间的 3 处日期矛盾。</span><span class="item-date">2026-10-25</span></li>
+        <li><span class="item-name">akt 短篇新作预告</span><span class="item-desc">直播中透露正在写一个以“远望号”厨师为视角的番外短篇，预计 12 月发布，约 8000 字。</span><span class="item-date">2026-10-20</span></li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-header">
+        <h2>分类入口</h2>
+      </div>
+      <div class="category-grid">
+        <a href="#featured" class="category-item">《夜航星图》连载</a>
+        <a href="#featured" class="category-item">《废土信使》连载</a>
+        <a href="#featured" class="category-item">《灰域来信》短篇</a>
+        <a href="#featured" class="category-item">设定集与概念图</a>
+        <a href="#featured" class="category-item">直播与问答</a>
+        <a href="#featured" class="category-item">音频广播剧</a>
+        <a href="#deep-dive" class="category-item">世界观考据</a>
+        <a href="#ranking" class="category-item">读者榜单</a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep-dive">
+      <div class="section-header">
+        <h2>深度解析：灰域世界的叙事规则</h2>
+      </div>
+      <div class="deep-dive">
+        <h3>“信号解码”作为叙事引擎的差异</h3>
+        <p>
+          《夜航星图》的推进力来自信号解码的逐步揭示，每一章解锁一段原始录音或日志片段。第7章到第14章之间，解码进度从“疑似自然噪声”推进到“确认为人工脉冲”，中间经历了两次误判和一次数据回滚。作者没有直接给答案，而是让角色在错误假设中反复修正。这种写法在连载中容易让读者产生“追更疲劳”，因为单章信息增量有限。第12章的评论区中，有读者统计了当章新增有效信息点仅为 3 个，而第11章是 7 个。
+        </p>
+        <p>
+          对比《废土信使》，后者的推进力来自空间位移——信使小队每到达一个新地点，就触发一组人物冲突。第9章抵达三号辐射区边缘时，用 4 页篇幅描写老刀的伤疤来源，同时推进了劫掠者头目的身份揭露。两种引擎的差异在于：解码驱动依赖读者对谜题的好奇，位移驱动依赖读者对角色处境的共情。目前读者反馈中，对《废土信使》的“节奏拖沓”抱怨明显少于《夜航星图》。
+        </p>
+
+        <h3>角色小传的发布节奏与信息层级</h3>
+        <p>
+          设定集中的角色小传并非一次性放出。11月6日上线的《废土信使》设定集收录 8 页角色小传，其中 5 页是正文中已出现角色的扩展信息，3 页是首次公开的配角背景。这 3 页中，“老刀”的早年经历占了 2 页，另一位“信使小队”成员“阿椿”的背景只有 1 页且未提及全名。akt 在11月5日的直播中解释，阿椿的背景会随连载进度逐步释放，设定集只提供“不剧透主线”的部分。
+        </p>
+        <div class="insight-box">
+          <strong>可核对的结构：</strong>《废土信使》设定集中 3 页首次公开内容里，2 页集中在老刀身上，1 页分给阿椿且仅有侧写。这组分配比例与正文中两人的出场篇幅正相关——截至第9章，老刀的 POV 段落约占 18%，阿椿约 6%。
+        </div>
+
+        <h3>更新节奏与读者预期管理</h3>
+        <p>
+          《夜航星图》的更新间隔在 2026 年 9 月至 11 月之间为 5—9 天，平均 6.8 天。10 月 28 日《灰域来信》收尾后，有读者在评论区提出“短篇完结后长篇能否提速”，akt 在11月3日的直播中回应：长篇提速会牺牲单章信息密度，目前维持现有节奏。同期《废土信使》的更新间隔为 7—12 天，平均 9.3 天，比《夜航星图》慢，但单章字数多出约 40%。
+        </p>
+        <p>
+          读者社群中有一种观点认为“短篇集完结后应该把精力转移到长篇”，但实际数据不支持这个判断——根据 10 月 15 日至 11 月 5 日的章节打开率，短篇《灰域来信》第七封的读完率为 68%，而同期《夜航星图》第13章的读完率为 52%。短篇的完整阅读率更高，对维持读者活跃度有实际作用。
+        </p>
+      </div>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-header">
+        <h2>体验指南：阅读顺序与判断依据</h2>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>先确认世界观入口</h4>
+            <p>《灰域来信》第七封“致失联者”是理解北境撤离路线的最短路径，读完再进入《夜航星图》第3章会减少地名混淆。如果跳过短篇直接读长篇，第11章出现的“北境三号定居点”会缺少背景参照。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>用单章信息增量判断是否追更</h4>
+            <p>打开一章后先看末尾的“本章揭示”列表（读者社群整理的摘要帖），如果新增信息点少于 4 个且没有角色关系变化，可以等累积三章后再补。第14章的信息点为 5 个，其中“远望号”中继站身份确认是主线级推进，值得单独阅读。</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>对比短篇与长篇的投入产出</h4>
+            <p>《灰域来信》每篇 3000—5000 字，读完约 20—30 分钟，适合想快速了解世界观基调的新读者。《夜航星图》单章约 8000 字，且需要前置章节的上下文，适合已经跟读三章以上的读者。如果时间有限，优先读短篇第七封和长篇第14章，这两篇的信息密度最高。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>常见问答</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>《夜航星图》第14章中“远望号”中继站和三十年前的船员名单是什么关系？</summary>
+          <div class="faq-answer">第14章通过信号解码确认脉冲来自“远望号”中继站，而该站的最后一组维护日志记录于三十年前。船员名单出现在日志附件中，林映发现名单上的一名通讯官与当前监听站的技术主管同名。目前正文未说明是否为同一人，但第13章的技术主管回忆段落提到“我父亲在远望号服役过”。</div>
+        </details>
+        <details>
+          <summary>《废土信使》设定集加印版和首印版有什么区别？</summary>
+          <div class="faq-answer">加印版修正了三号辐射区地图的 3 处标注错误：原版将“备用补给点 B”标在辐射区边界内，加印版移至边界外 2 公里处；另外两处是路线交叉点的编号重复。内页角色小传和场景概念图与首印版一致，没有新增内容。</div>
+        </details>
+        <details>
+          <summary>《灰域来信》第七封“致失联者”的结尾为什么没有寄出？</summary>
+          <div class="faq-answer">信件收件人是北境撤离行动中失联的通讯员“沈迟”，写信人“阿椿”在信末备注“查无此人，退回”。这个处理与《夜航星图》第3章中阿椿的出场形成呼应——她在第3章提到“我写过一封信，但没寄出去”。两处信息拼合后，读者才能确认阿椿和沈迟之间的关系。</div>
+        </details>
+        <details>
+          <summary>akt 在直播中透露的《夜航星图》第二部信息有哪些？</summary>
+          <div class="faq-answer">11月5日的直播中，akt 确认第二部大纲已完成 60%，主线将围绕“远望号”中继站的修复过程展开，林映仍是主要视角角色。同时提到“老刀”会在第二部中以客串形式出现，但不会参与主线。上线时间未定，需要等第一部修订版发布后再排期。</div>
+        </details>
+        <details>
+          <summary>为什么《夜航星图》的更新间隔比《废土信使》短，但单章字数更少？</summary>
+          <div class="faq-answer">《夜航星图》单章平均约 8000 字，更新间隔 5—9 天；《废土信使》单章约 11000 字，更新间隔 7—12 天。akt 在直播中解释，长篇的章节结构需要更频繁的“钩子”来维持追读，所以单章字数压缩、更新频率提高。短篇的章节可以承载更完整的场景，字数放开但间隔拉长。</div>
+        </details>
+        <details>
+          <summary>《远望号电台》广播剧和主线剧情有直接关联吗？</summary>
+          <div class="faq-answer">第三期“监听日志”中公开的信号原始录音片段与《夜航星图》第14章的解码结果完全一致，属于主线内容的音频化呈现。前两期是独立番外，以远望号厨师和维修工的视角展开，不涉及主线谜题，但补充了中继站的生活细节。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-header">
+        <h2>读者评论</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">信号塔守夜人</span><span class="comment-time">11-08</span></div><div class="comment-text">第14章那个低频噪音的细节太对味了，我戴着耳机听了好几遍，确实有周期性起伏。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">老刀的刀鞘</span><span class="comment-time">11-07</span></div><div class="comment-text">废土信使第9章把老刀伤疤的伏笔收了，但收得有点赶。前面铺垫了三次，结果就两页带过。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">灰域考据组</span><span class="comment-time">11-06</span></div><div class="comment-text">设定集加印版的地图修正很关键，首印版那个补给点标注确实有问题，我们群里讨论过好几轮。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">北境信使</span><span class="comment-time">11-05</span></div><div class="comment-text">直播里说阿椿背景会慢慢放，这个策略我认同。一次性放完反而没意思。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">低频脉冲</span><span class="comment-time">11-04</span></div><div class="comment-text">夜航星图从第12章开始信息密度下来了，第12章我翻了两遍才找到三个有用信息点。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">沈迟的投递箱</span><span class="comment-time">11-03</span></div><div class="comment-text">灰域来信第七封结尾没寄出去那段，我第一遍没看懂，后来翻回第3章才明白阿椿和沈迟的关系。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">远望号食堂</span><span class="comment-time">11-02</span></div><div class="comment-text">电台第三期厨师那段笑死，说舰上最不缺的就是脱水蔬菜。akt 配旁白的时候自己都笑了。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">三号辐射区</span><span class="comment-time">11-01</span></div><div class="comment-text">短篇集完结了有点失落，虽然知道长篇还在更，但灰域来信那种书信体的味道是长篇给不了的。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">林映的日志本</span><span class="comment-time">10-30</span></div><div class="comment-text">第14章最后那句“信号不会等人”有点刻意，前面铺垫了那么久的谨慎人设，突然说这种话不太像林映。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">劫掠者B</span><span class="comment-time">10-29</span></div><div class="comment-text">废土信使的打斗场面写得比夜航星图好，可能因为位移驱动的故事本身就适合动作戏。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">备用补给点</span><span class="comment-time">10-28</span></div><div class="comment-text">读完第七封去翻了第3章，阿椿说的那封信和第七封对上了。这种跨篇的拼图感很舒服。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">数据回滚</span><span class="comment-time">10-26</span></div><div class="comment-text">考据组整理的时间线v2.0我看了，第7章和第11章的日期矛盾终于修正了，但第12章好像还有个小问题没人提。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">沙暴天气</span><span class="comment-time">10-24</span></div><div class="comment-text">这周更新没跟上，攒了两章一起看反而更顺畅，单章追更太碎了。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">中继站维修工</span><span class="comment-time">10-22</span></div><div class="comment-text">设定集里那张三号辐射区地图折页我贴在书桌前面了，对照看第9章的位置描述很方便。</div></div>
+        <div class="comment-card"><div class="comment-header"><span class="comment-name">致失联者</span><span class="comment-time">10-20</span></div><div class="comment-text">第七封读完难受了半天。没寄出去的信这个点太戳了，比直接写牺牲更有分量。</div></div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2>相关资讯</h2>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news1/600/400" alt="《夜航星图》第14章信号波形图" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-11-08</div>
+            <div class="news-title">《夜航星图》第14章信号源确认为“远望号”中继站</div>
+            <p class="news-summary">章节末尾附带的频谱图显示脉冲频率与远望号退役前的应急频段一致。akt 在章节注释中提到，该频段数据参考了 1998 年某次深空探测任务的公开记录。</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news2/600/400" alt="《废土信使》设定集加印版实拍" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-11-04</div>
+            <div class="news-title">《废土信使》设定集加印 1500 册，修正三号辐射区地图</div>
+            <p class="news-summary">首印 2000 册在 11 月 2 日售罄，加印版修正了首印版中“备用补给点 B”的坐标标注错误，并重新编排了路线交叉点编号。预计 11 月 20 日发货。</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news3/600/400" alt="akt直播问答回放截图" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-11-03</div>
+            <div class="news-title">akt 直播确认《夜航星图》第二部大纲完成 60%</div>
+            <p class="news-summary">直播中 akt 提到第二部将围绕“远望号”中继站的修复展开，林映仍是主要视角。老刀会以客串形式出现，但不参与主线。上线时间需等第一部修订版发布后确定。</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news4/600/400" alt="《灰域来信》第七封信件排版" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-10-28</div>
+            <div class="news-title">《灰域来信》第七封“致失联者”完结，补充北境撤离路线</div>
+            <p class="news-summary">信件末尾的未寄出标注与《夜航星图》第3章阿椿的台词形成衔接。读者社群在 10 月 29 日整理出两篇内容的对照表，确认阿椿与沈迟的关系为姐弟。</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news5/600/400" alt="读者考据合集时间线v2.0封面" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-10-25</div>
+            <div class="news-title">读者考据合集《夜航星图时间线 v2.0》发布，修正 3 处日期矛盾</div>
+            <p class="news-summary">v2.0 版重点修正了第7章与第11章之间的时间线冲突，涉及“北境三号定居点”的建立年份和远望号最后一次补给日期。考据组在发布帖中标注了 2 处待确认的细节。</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <img src="https://picsum.photos/seed/akt-news6/600/400" alt="akt短篇新作预告画面" width="600" height="400" loading="lazy">
+          <div class="news-body">
+            <div class="news-date">2026-10-20</div>
+            <div class="news-title">akt 透露番外短篇计划，以“远望号”厨师为视角</div>
+            <p class="news-summary">短篇预计 8000 字左右，时间线设定在远望号退役前三个月，通过厨师视角展现中继站日常。akt 表示这篇不会涉及主线谜题，属于独立番外，预计 12 月发布。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="related-tags">
+      <div class="section-header">
+        <h2>相关推荐</h2>
+      </div>
+      <div class="tag-index">
+        <a href="#featured">远望号中继站考据</a>
+        <a href="#featured">老刀伤疤时间线</a>
+        <a href="#featured">灰域来信第七封解析</a>
+        <a href="#featured">阿椿与沈迟关系</a>
+        <a href="#featured">废土信使设定集对比</a>
+        <a href="#featured">夜航星图第二部预告</a>
+        <a href="#featured">远望号电台番外</a>
+      </div>
+    </section>
+
+    <!-- 热门榜单 -->
+    <section class="section" id="ranking">
+      <div class="section-header">
+        <h2>热门榜单（按本周阅读量）</h2>
+      </div>
+      <ul class="compact-list">
+        <li><span class="item-name">1. 《夜航星图》第14章</span><span class="item-desc">信号源确认，主线级推进</span><span class="item-date">3.2万阅读</span></li>
+        <li><span class="item-name">2. 《废土信使》第9章</span><span class="item-desc">老刀伤疤伏笔回收</span><span class="item-date">2.1万阅读</span></li>
+        <li><span class="item-name">3. 《灰域来信》第七封</span><span class="item-desc">短篇集完结，跨篇拼图</span><span class="item-date">1.8万阅读</span></li>
+        <li><span class="item-name">4. 《废土信使》设定集</span><span class="item-desc">加印版修正地图</span><span class="item-date">1.4万阅读</span></li>
+        <li><span class="item-name">5. 《远望号电台》第三期</span><span class="item-desc">信号原始录音公开</span><span class="item-date">7600 播放</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="aux-sidebar">
+    <div class="aux-card">
+      <h4>热榜速览</h4>
+      <ul class="hot-list">
+        <li><span class="rank">1</span><a href="#featured" class="title">夜航星图第14章</a></li>
+        <li><span class="rank">2</span><a href="#featured" class="title">废土信使第9章</a></li>
+        <li><span class="rank">3</span><a href="#featured" class="title">灰域来信第七封</a></li>
+        <li><span class="rank">4</span><a href="#featured" class="title">废土信使设定集</a></li>
+        <li><span class="rank">5</span><a href="#featured" class="title">远望号电台第三期</a></li>
+      </ul>
+    </div>
+    <div class="aux-card">
+      <h4>更新日历</h4>
+      <ul class="update-timeline">
+        <li><span class="date">11-08</span>夜航星图第14章</li>
+        <li><span class="date">11-06</span>设定集加印公告</li>
+        <li><span class="date">11-05</span>废土信使第9章</li>
+        <li><span class="date">11-03</span>直播问答回放</li>
+        <li><span class="date">11-01</span>远望号电台第三期</li>
+        <li><span class="date">10-28</span>灰域来信第七封</li>
+      </ul>
+    </div>
+    <div class="aux-card">
+      <h4>互动入口</h4>
+      <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:12px;">投稿你的考据、同人图或角色分析，经整理后展示在读者社群板块。</p>
+      <a href="#comments" class="btn-primary" style="display:block; text-align:center; padding:10px 0; font-size:0.85rem;">前往投稿</a>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-text">akt大佬</div>
+        <p>追踪 akt 的连载更新、设定集发布与直播问答，覆盖《夜航星图》《废土信使》《灰域来信》及衍生音频内容。更新频率维持在每周 1—2 次，单章阅读量在 1.4 万至 3.2 万之间。</p>
+      </div>
+      <div class="footer-col">
+        <h4>作品</h4>
+        <a href="#featured">夜航星图</a>
+        <a href="#featured">废土信使</a>
+        <a href="#featured">灰域来信</a>
+        <a href="#featured">远望号电台</a>
+      </div>
+      <div class="footer-col">
+        <h4>内容</h4>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">读者评论</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="#comments">投稿考据</a>
+        <a href="#ranking">热门榜单</a>
+        <a href="#news">相关资讯</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 akt大佬 内容聚合页 · 示例条目与数据仅用于展示</span>
+      <span>最后更新：2026-11-08</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 移动端菜单
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  const overlay = document.getElementById('mobileNavOverlay');
+
+  function closeMenu() {
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('active');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    if (isOpen) {
+      overlay.classList.add('active');
+    } else {
+      overlay.classList.remove('active');
+    }
+  });
+
+  overlay.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // 回到顶部
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backBtn.classList.add('show');
+    } else {
+      backBtn.classList.remove('show');
+    }
+  });
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 搜索筛选
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const allSections = document.querySelectorAll('.section');
+  const noResults = document.createElement('div');
+  noResults.className = 'no-results';
+  noResults.textContent = '没有找到匹配的内容，试试其他关键词。';
+  document.querySelector('.main-content').prepend(noResults);
+
+  function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    if (!query) {
+      allSections.forEach(sec => sec.style.display = '');
+      noResults.style.display = 'none';
+      return;
+    }
+    let hasVisible = false;
+    allSections.forEach(sec => {
+      const text = sec.textContent.toLowerCase();
+      if (text.includes(query)) {
+        sec.style.display = '';
+        hasVisible = true;
+      } else {
+        sec.style.display = 'none';
+      }
+    });
+    noResults.style.display = hasVisible ? 'none' : 'block';
+  }
+
+  searchBtn.addEventListener('click', performSearch);
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') performSearch();
+  });
+
+  // 频道导航高亮
+  const channelLinks = document.querySelectorAll('.channel-nav a');
+  const sections = document.querySelectorAll('.section');
+  function updateActiveChannel() {
+    let current = '';
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 160) current = sec.id;
+    });
+    channelLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActiveChannel);
+  window.addEventListener('load', updateActiveChannel);
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "akt大佬",
+  "description": "汇集 akt 的原创连载、短篇、设定集与直播问答的内容聚合页。",
+  "url": "https://example.com/akt"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《夜航星图》第14章中“远望号”中继站和三十年前的船员名单是什么关系？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第14章通过信号解码确认脉冲来自“远望号”中继站，而该站的最后一组维护日志记录于三十年前。船员名单出现在日志附件中，林映发现名单上的一名通讯官与当前监听站的技术主管同名。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《废土信使》设定集加印版和首印版有什么区别？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "加印版修正了三号辐射区地图的 3 处标注错误，内页角色小传和场景概念图与首印版一致。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《灰域来信》第七封“致失联者”的结尾为什么没有寄出？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "信件收件人是北境撤离行动中失联的通讯员“沈迟”，写信人“阿椿”在信末备注“查无此人，退回”。这个处理与《夜航星图》第3章中阿椿的出场形成呼应。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "akt 在直播中透露的《夜航星图》第二部信息有哪些？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11月5日的直播中，akt 确认第二部大纲已完成 60%，主线将围绕“远望号”中继站的修复过程展开，林映仍是主要视角角色。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么《夜航星图》的更新间隔比《废土信使》短，但单章字数更少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "《夜航星图》单章平均约 8000 字，更新间隔 5—9 天；《废土信使》单章约 11000 字，更新间隔 7—12 天。akt 在直播中解释，长篇的章节结构需要更频繁的“钩子”来维持追读。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《远望号电台》广播剧和主线剧情有直接关联吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第三期“监听日志”中公开的信号原始录音片段与《夜航星图》第14章的解码结果完全一致，属于主线内容的音频化呈现。前两期是独立番外。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+  </html>
